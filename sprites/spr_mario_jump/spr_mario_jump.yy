@@ -2,10 +2,10 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "spr_mario_jump",
-  "bbox_bottom": 39,
-  "bbox_left": 2,
-  "bbox_right": 17,
-  "bbox_top": 24,
+  "bbox_bottom": 15,
+  "bbox_left": 0,
+  "bbox_right": 15,
+  "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
   "collisionTolerance": 0,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"afd73d9c-de32-4f8e-9232-75c635b88d1f",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"687b9c50-acdc-4b67-8cbc-ed91d8927986",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 40,
+  "height": 16,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"230bac1f-c38e-42d8-9186-4525579d36dd","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"655f5e73-cbb2-430d-a920-64acbc3d8dcc","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"afd73d9c-de32-4f8e-9232-75c635b88d1f","path":"sprites/spr_mario_jump/spr_mario_jump.yy",},},},"Disabled":false,"id":"7e38c76a-1b99-47a0-a245-374ca92bcd9e","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"687b9c50-acdc-4b67-8cbc-ed91d8927986","path":"sprites/spr_mario_jump/spr_mario_jump.yy",},},},"Disabled":false,"id":"b16f5c7b-ba81-4c4e-bbdc-27922cb20881","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 20,
+  "width": 16,
 }
