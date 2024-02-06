@@ -33,8 +33,8 @@ if(move_speed > walk_speed && sprite_index == spr_walk){
 }
 
 if move != 0 {
-    //if (move == 1) hsp = min(move_speed, hsp + acceleration); //accelerate going right
-    //if (move == -1) hsp = max(-move_speed, hsp - acceleration); //accelerate going left
+    if (move == 1) hsp = min(move_speed, hsp + accel); //accelerate going right
+    if (move == -1) hsp = max(-move_speed, hsp - accel); //accelerate going left
 	hsp = move * move_speed;
 	//hsp = lerp(hsp, move * move_speed, acceleration);
 }    else {

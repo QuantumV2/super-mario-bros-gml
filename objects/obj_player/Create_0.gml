@@ -1,5 +1,5 @@
 // Speeds
-walk_speed = 1.6;
+walk_speed = 1.8;
 run_speed = 2.3;
 grav = 0.2;
 jump_speed = -5.2;
@@ -21,6 +21,7 @@ spr_brake = spr_mario_turn;
 hsp = 0;
 vsp = 0;
 
-frict = .1; 
+frict = .06;
+accel = .1;
 
 global.music = audio_play_sound(overworld_theme, 1000, true)
