@@ -22,6 +22,8 @@ hsp = 0;
 vsp = 0;
 
 frict = .06;
-accel = .1;
+accel = .2;
+
+mask_index = spr_mario_mask
 
 global.music = audio_play_sound(overworld_theme, 1000, true)

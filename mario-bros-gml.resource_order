@@ -29,6 +29,7 @@
     {"name":"spr_mario_jump","order":20,"path":"sprites/spr_mario_jump/spr_mario_jump.yy",},
     {"name":"obj_transitionscreen","order":10,"path":"objects/obj_transitionscreen/obj_transitionscreen.yy",},
     {"name":"obj_OLDTVFilter_Composite","order":1,"path":"objects/obj_OLDTVFilter_Composite/obj_OLDTVFilter_Composite.yy",},
+    {"name":"spr_mario_mask","order":41,"path":"sprites/spr_mario_mask/spr_mario_mask.yy",},
     {"name":"sprScanline1","order":7,"path":"sprites/sprScanline1/sprScanline1.yy",},
     {"name":"obj_solidfollowcam","order":9,"path":"objects/obj_solidfollowcam/obj_solidfollowcam.yy",},
     {"name":"spr_mario_Swim3","order":2,"path":"sprites/spr_mario_Swim3/spr_mario_Swim3.yy",},

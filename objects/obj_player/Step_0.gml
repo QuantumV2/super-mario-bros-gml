@@ -32,10 +32,12 @@ if(move_speed > walk_speed && sprite_index == spr_walk){
 	image_speed = 1
 }
 
+
+
 if move != 0 {
     if (move == 1) hsp = min(move_speed, hsp + accel); //accelerate going right
     if (move == -1) hsp = max(-move_speed, hsp - accel); //accelerate going left
-	hsp = move * move_speed;
+	//hsp = move * move_speed;
 	//hsp = lerp(hsp, move * move_speed, acceleration);
 }    else {
     if (hsp > 0 && move==0){
@@ -65,22 +67,25 @@ if (is_dead) {
     sprite_index = spr_jump;
 } else if (hsp == 0) {
     sprite_index = spr_idle;
+} else if((sign(hsp) != sign(move)) && move != 0){
+	sprite_index = spr_brake
 } else {
     sprite_index = spr_walk;
 }
-// Horizontal collision
-if(place_meeting(x+hsp, y, obj_solid))
-{
-    while(!place_meeting(x+sign(hsp), y, obj_solid))
-    {
-        x += sign(hsp)
+
+for (var i = 0; i < abs(hsp); i++) {
+    if (!place_meeting(x + sign(hsp), y, obj_solid)) {
+        x += sign(hsp);
+    } else {
+        while (!place_meeting(x + sign(hsp), y, obj_solid)) {
+            x += sign(hsp);
+        }
+        hsp = 0;
+        break;
     }
-    hsp = 0
 }
-x += hsp;
 
-
-// Vertical collision
+// Vertical Collision
 if (place_meeting(x, y + vsp, obj_solid)) {
     while (!place_meeting(x, y + sign(vsp), obj_solid)) {
         y += sign(vsp);
@@ -90,7 +95,8 @@ if (place_meeting(x, y + vsp, obj_solid)) {
     is_jumping = false;
 
 }
-else if !(place_meeting(x, y + 16, obj_solid))
+
+if !(place_meeting(x, y + 16, obj_solid))
 {
     if(alarm[0] <= 0) alarm[0] = 4;
 }

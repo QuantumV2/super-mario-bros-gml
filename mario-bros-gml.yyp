@@ -47,6 +47,7 @@
     {"id":{"name":"obj_transitionscreen","path":"objects/obj_transitionscreen/obj_transitionscreen.yy",},},
     {"id":{"name":"obj_OLDTVFilter_Composite","path":"objects/obj_OLDTVFilter_Composite/obj_OLDTVFilter_Composite.yy",},},
     {"id":{"name":"sh_OLDTVFilter_Bleeding","path":"shaders/sh_OLDTVFilter_Bleeding/sh_OLDTVFilter_Bleeding.yy",},},
+    {"id":{"name":"spr_mario_mask","path":"sprites/spr_mario_mask/spr_mario_mask.yy",},},
     {"id":{"name":"sprScanline1","path":"sprites/sprScanline1/sprScanline1.yy",},},
     {"id":{"name":"obj_solidfollowcam","path":"objects/obj_solidfollowcam/obj_solidfollowcam.yy",},},
     {"id":{"name":"spr_mario_Swim3","path":"sprites/spr_mario_Swim3/spr_mario_Swim3.yy",},},
