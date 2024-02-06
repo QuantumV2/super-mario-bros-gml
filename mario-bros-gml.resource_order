@@ -77,6 +77,7 @@
     {"name":"spr_questionblock","order":31,"path":"sprites/spr_questionblock/spr_questionblock.yy",},
     {"name":"coin","order":9,"path":"sounds/coin/coin.yy",},
     {"name":"spr_usedblock","order":33,"path":"sprites/spr_usedblock/spr_usedblock.yy",},
+    {"name":"retro","order":3,"path":"rooms/retro/retro.yy",},
     {"name":"spr_brickbounce","order":26,"path":"sprites/spr_brickbounce/spr_brickbounce.yy",},
     {"name":"spr_flagpole","order":50,"path":"sprites/spr_flagpole/spr_flagpole.yy",},
     {"name":"print","order":5,"path":"scripts/print/print.yy",},

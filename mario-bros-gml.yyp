@@ -99,6 +99,7 @@
     {"id":{"name":"coin","path":"sounds/coin/coin.yy",},},
     {"id":{"name":"spr_usedblock","path":"sprites/spr_usedblock/spr_usedblock.yy",},},
     {"id":{"name":"spr_mario_swim1","path":"sprites/spr_mario_swim1/spr_mario_swim1.yy",},},
+    {"id":{"name":"retro","path":"rooms/retro/retro.yy",},},
     {"id":{"name":"spr_brickbounce","path":"sprites/spr_brickbounce/spr_brickbounce.yy",},},
     {"id":{"name":"spr_flagpole","path":"sprites/spr_flagpole/spr_flagpole.yy",},},
     {"id":{"name":"print","path":"scripts/print/print.yy",},},
@@ -157,6 +158,7 @@
   "RoomOrderNodes": [
     {"roomId":{"name":"transition","path":"rooms/transition/transition.yy",},},
     {"roomId":{"name":"mario_1_1","path":"rooms/mario_1_1/mario_1_1.yy",},},
+    {"roomId":{"name":"retro","path":"rooms/retro/retro.yy",},},
   ],
   "templateType": null,
   "TextureGroups": [
