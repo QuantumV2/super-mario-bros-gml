@@ -31,8 +31,8 @@
   "properties": [],
   "solid": true,
   "spriteId": {
-    "name": "spr_solid",
-    "path": "sprites/spr_solid/spr_solid.yy",
+    "name": "spr_solidfollowcam",
+    "path": "sprites/spr_solidfollowcam/spr_solidfollowcam.yy",
   },
   "spriteMaskId": null,
   "visible": false,

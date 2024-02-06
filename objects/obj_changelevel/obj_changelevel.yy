@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_solid",
-    "path": "sprites/spr_solid/spr_solid.yy",
+    "name": "spr_changelevel",
+    "path": "sprites/spr_changelevel/spr_changelevel.yy",
   },
   "spriteMaskId": null,
   "visible": false,
