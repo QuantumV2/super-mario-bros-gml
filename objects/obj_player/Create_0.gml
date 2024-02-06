@@ -17,6 +17,11 @@ spr_jump = spr_mario_jump;
 spr_dead = spr_mario_die;
 spr_brake = spr_mario_turn;
 
+spr_bigidle = spr_bigmario_idle;
+spr_bigwalk = spr_bigmario_run;
+spr_bigjump = spr_bigmario_jump;
+spr_bigbrake = spr_bigmario_turn;
+
 // Initialize physics
 hsp = 0;
 vsp = 0;
@@ -27,3 +32,4 @@ accel = .04;
 mask_index = spr_mario_mask
 
 global.music = audio_play_sound(overworld_theme, 1000, true)
+big = false
