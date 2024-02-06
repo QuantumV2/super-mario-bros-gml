@@ -13,7 +13,7 @@ if !global.forcepaused
 		audio_play_sound(pause_sound, 10, false)
 	}
 }
-if(global.paused) exit;
+if(global.paused || frozen) exit;
 
 // Get player input
 move = keyboard_check(ord("D")) - keyboard_check(ord("A"));
@@ -60,6 +60,26 @@ if (keyboard_check_pressed(vk_space) && !is_jumping) {
 // Update vspeed with gravity
 if (is_jumping) vsp += grav;
 
+if(big)
+{
+	frict = .03;
+	mask_index = spr_bigmario_mask;
+	spr_idle = spr_bigmario_idle;
+	spr_walk = spr_bigmario_run;
+	spr_jump = spr_bigmario_jump;
+	spr_brake = spr_bigmario_turn;	
+}
+else
+{
+	frict = .06;
+	mask_index = spr_mario_mask;
+	spr_idle = spr_mario_idle;
+	spr_walk = spr_mario_run;
+	spr_jump = spr_mario_jump;
+	spr_dead = spr_mario_die;
+	spr_brake = spr_mario_turn;
+}
+
 // Change sprites based on actions
 if (is_dead) {
     sprite_index = spr_dead;
@@ -67,7 +87,7 @@ if (is_dead) {
     sprite_index = spr_jump;
 } else if (hsp == 0) {
     sprite_index = spr_idle;
-} else if((sign(hsp) != sign(move)) && move != 0){
+} else if(abs(hsp - move) > 1.5 && move != 0 && abs(hsp) > .2 && sign(hsp) != sign(move)){
 	sprite_index = spr_brake
 } else {
     sprite_index = spr_walk;
