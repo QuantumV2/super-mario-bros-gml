@@ -1,2 +1,2 @@
-if sprite_index == spr_mario_jump
+if sprite_index == spr_jump
 vsp = -3
