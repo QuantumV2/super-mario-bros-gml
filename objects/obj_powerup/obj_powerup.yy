@@ -33,6 +33,9 @@
     "name": "spr_mushroom",
     "path": "sprites/spr_mushroom/spr_mushroom.yy",
   },
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "spr_goombmask",
+    "path": "sprites/spr_goombmask/spr_goombmask.yy",
+  },
   "visible": true,
 }
