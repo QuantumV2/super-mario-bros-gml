@@ -35,10 +35,10 @@ if(move_speed > walk_speed && sprite_index == spr_walk){
 
 
 if move != 0 {
-    if (move == 1) hsp = min(move_speed, hsp + accel); //accelerate going right
-    if (move == -1) hsp = max(-move_speed, hsp - accel); //accelerate going left
+    //if (move == 1) hsp = min(move_speed, hsp + accel); //accelerate going right
+    //if (move == -1) hsp = max(-move_speed, hsp - accel); //accelerate going left
 	//hsp = move * move_speed;
-	//hsp = lerp(hsp, move * move_speed, acceleration);
+	hsp = lerp(hsp, move * move_speed, accel);
 }    else {
     if (hsp > 0 && move==0){
 		hsp = max(0, hsp - frict); //friction going right
@@ -73,16 +73,22 @@ if (is_dead) {
     sprite_index = spr_walk;
 }
 
-for (var i = 0; i < abs(hsp); i++) {
-    if (!place_meeting(x + sign(hsp), y, obj_solid)) {
-        x += sign(hsp);
+var whole = floor(abs(hsp)); // the integer part of hsp
+var fraction = abs(hsp) - whole; // the fractional part of hsp
+var dir = sign(hsp); // the direction hsp is pointing
+
+for (var i = 0; i < whole; i++) {
+    if (!place_meeting(x + dir, y, obj_solid)) {
+        x += dir;
     } else {
-        while (!place_meeting(x + sign(hsp), y, obj_solid)) {
-            x += sign(hsp);
-        }
-        hsp = 0;
+        hsp = 0; // stop horizontal movement when colliding
         break;
     }
+}
+
+// check for any remaining fractional movement if we haven't already hit a solid
+if (hsp != 0 && fraction > 0 && !place_meeting(x + dir, y, obj_solid)) {
+    x += dir * fraction;
 }
 
 // Vertical Collision

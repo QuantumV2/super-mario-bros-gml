@@ -22,7 +22,7 @@ hsp = 0;
 vsp = 0;
 
 frict = .06;
-accel = .2;
+accel = .04;
 
 mask_index = spr_mario_mask
 
