@@ -140,7 +140,7 @@
     {"id":{"name":"sprMask1","path":"sprites/sprMask1/sprMask1.yy",},},
     {"id":{"name":"bg_1","path":"sprites/bg_1/bg_1.yy",},},
     {"id":{"name":"obj_brick","path":"objects/obj_brick/obj_brick.yy",},},
-    {"id":{"name":"screen1","path":"sprites/screen1/screen1.yy",},},
+    {"id":{"name":"spr_screen1","path":"sprites/spr_screen1/spr_screen1.yy",},},
     {"id":{"name":"spr_bigmario_climb","path":"sprites/spr_bigmario_climb/spr_bigmario_climb.yy",},},
     {"id":{"name":"spr_brick","path":"sprites/spr_brick/spr_brick.yy",},},
     {"id":{"name":"obj_OLDTVFilter_SVideo","path":"objects/obj_OLDTVFilter_SVideo/obj_OLDTVFilter_SVideo.yy",},},

@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "screen1",
-    "path": "sprites/screen1/screen1.yy",
+    "name": "spr_screen1",
+    "path": "sprites/spr_screen1/spr_screen1.yy",
   },
   "spriteMaskId": null,
   "visible": true,

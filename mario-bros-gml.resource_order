@@ -116,7 +116,7 @@
     {"name":"sprMask1","order":2,"path":"sprites/sprMask1/sprMask1.yy",},
     {"name":"bg_1","order":22,"path":"sprites/bg_1/bg_1.yy",},
     {"name":"obj_brick","order":2,"path":"objects/obj_brick/obj_brick.yy",},
-    {"name":"screen1","order":24,"path":"sprites/screen1/screen1.yy",},
+    {"name":"spr_screen1","order":24,"path":"sprites/spr_screen1/spr_screen1.yy",},
     {"name":"spr_bigmario_climb","order":5,"path":"sprites/spr_bigmario_climb/spr_bigmario_climb.yy",},
     {"name":"spr_brick","order":25,"path":"sprites/spr_brick/spr_brick.yy",},
     {"name":"obj_OLDTVFilter_SVideo","order":6,"path":"objects/obj_OLDTVFilter_SVideo/obj_OLDTVFilter_SVideo.yy",},
