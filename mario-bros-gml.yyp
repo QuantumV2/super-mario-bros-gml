@@ -40,7 +40,7 @@
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
-    "IDEVersion": "2023.11.1.129",
+    "IDEVersion": "2023.11.0.121",
   },
   "resources": [
     {"id":{"name":"scr_test_add_code","path":"scripts/scr_test_add_code/scr_test_add_code.yy",},},
