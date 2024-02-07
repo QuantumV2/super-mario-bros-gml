@@ -1,4 +1,5 @@
 // Speeds
+hurryup = 0
 walk_speed = 1.8;
 run_speed = 3.1;
 grav = 0.2;

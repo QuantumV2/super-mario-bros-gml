@@ -14,9 +14,19 @@ if !global.forcepaused
 	}
 }
 if(global.paused || frozen) exit;
+if instance_exists(obj_camera) && obj_camera.timer <= 100 && !hurryup {
+	hurryup = 1
+	audio_stop_sound(global.music)
+	global.music = undefined
+	audio_play_sound(hurry_up, 1000, false)
+} else if hurryup && !global.music && !audio_is_playing(hurry_up) {
+	global.music = audio_play_sound(overworld_theme, 1000, true, 1, 0, 1.5)
+}
 
 // Get player input
 move = keyboard_check(ord("D")) - keyboard_check(ord("A"));
+if y > 240
+	is_dead = true
 
 // Set horizontal speed
 //hsp = move * (keyboard_check(vk_shift) ? run_speed : walk_speed);
