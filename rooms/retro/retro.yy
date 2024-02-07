@@ -10,7 +10,6 @@
     {"name":"inst_D7DFA17","path":"rooms/retro/retro.yy",},
     {"name":"inst_5B0A9699","path":"rooms/retro/retro.yy",},
     {"name":"inst_7EEB442D","path":"rooms/retro/retro.yy",},
-    {"name":"inst_7981863E","path":"rooms/retro/retro.yy",},
     {"name":"inst_6F4F525","path":"rooms/retro/retro.yy",},
   ],
   "isDnd": false,
@@ -21,7 +20,6 @@
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_D7DFA17","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_questionmarkblock","path":"objects/obj_questionmarkblock/obj_questionmarkblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":96.0,"y":144.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_5B0A9699","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_goomba","path":"objects/obj_goomba/obj_goomba.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":136.0,"y":201.0,},
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7981863E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":88.0,"y":201.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":15,"SerialiseWidth":16,"TileCompressedData":[
 -179,-2147483648,2,44,45,-14,-2147483648,2,55,56,-11,-2147483648,-32,57,],"TileDataFormat":1,},"tilesetId":{"name":"tileset_overworld","path":"tilesets/tileset_overworld/tileset_overworld.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},

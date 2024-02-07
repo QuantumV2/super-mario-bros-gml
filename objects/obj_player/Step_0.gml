@@ -34,7 +34,7 @@ if instance_exists(obj_camera) && obj_camera.timer <= 100 && !hurryup {
 		audio_resume_sound(global.music)
 		audio_sound_pitch(global.music, 1.5)
 }
-if y > room_height
+if y > room_height && !is_dead
 	is_dead = true
 if is_dead {
 	sprite_index = spr_dead
@@ -50,7 +50,7 @@ if is_dead {
 		audio_stop_all()
 		vsp = -8.2
 	}
-	if vsp > -5.2
+	if vsp > -6.2
 		y += vsp
 	if y > room_height && vsp > 0
         { 
@@ -152,9 +152,15 @@ if (keyboard_check_pressed(vk_space) && !is_jumping) {
     if (sign(vsp) == -1) vsp /= 2;
 }
 
+if(vsp > .2)
+{
+	vsp += 0.1
+}
 
 // Update vspeed with gravity
-if (is_jumping) vsp += grav;
+
+if (is_jumping && vsp < (grav * 13)) vsp += grav;
+
 
 if(move_speed == run_speed && abs(hsp) >= walk_speed)
 {

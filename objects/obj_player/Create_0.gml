@@ -2,7 +2,7 @@
 // Speeds
 hurryup = 0
 walk_speed = 1.9;
-run_speed = 3;
+run_speed = 3.3;
 grav = 0.2;
 jump_speed = -5.3;
 
@@ -30,6 +30,9 @@ frict = .06;
 accel = .04;
 
 frozen = false
+
+target_door = "A"
+target_room = -1
 
 pipe = noone
 
