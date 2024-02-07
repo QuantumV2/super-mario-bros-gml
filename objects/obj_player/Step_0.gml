@@ -22,11 +22,26 @@ if instance_exists(obj_camera) && obj_camera.timer <= 100 && !hurryup {
 } else if hurryup && !global.music && !audio_is_playing(hurry_up) {
 	global.music = audio_play_sound(overworld_theme, 1000, true, 1, 0, 1.5)
 }
+if y > room_height
+	is_dead = true
+if is_dead {
+	sprite_index = spr_dead
+	vsp += grav
+	if global.music || hurryup {
+		hurryup = 0
+		global.music = undefined
+		audio_stop_all()
+		vsp = -8.2
+	}
+	if vsp > -5.2
+		y += vsp
+	if y > room_height && vsp > 0
+		room_goto(transition)
+	exit
+}
 
 // Get player input
 move = keyboard_check(ord("D")) - keyboard_check(ord("A"));
-if y > 240
-	is_dead = true
 
 // Set horizontal speed
 //hsp = move * (keyboard_check(vk_shift) ? run_speed : walk_speed);
