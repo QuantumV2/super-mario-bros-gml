@@ -1,4 +1,4 @@
-if(other.y < y && !dead)
+if(other.y < y - 2 && !dead && other.is_jumping)
 {
 	audio_play_sound(stomp, 10, false)
 	sprite_index = spr_goombadead
@@ -7,8 +7,8 @@ if(other.y < y && !dead)
 }
 else
 {
-	if(!dead && sprite_index != spr_goombadead)
+	if(!dead && sprite_index != spr_goombadead && !other.frozen && !other.is_dead)
 	{
-		other.is_dead = true
+		scr_player_get_hurt()
 	}
 }

@@ -1,4 +1,3 @@
-
 hsp = spd * movdir
 var whole = floor(abs(hsp)); // the integer part of hsp
 var fraction = abs(hsp) - whole; // the fractional part of hsp

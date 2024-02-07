@@ -1,3 +1,4 @@
+
 if !global.forcepaused
 {
 	if(keyboard_check_pressed(vk_enter)){
@@ -14,18 +15,30 @@ if !global.forcepaused
 	}
 }
 if(global.paused || frozen) exit;
+if(invisframes > 0)
+{
+	is_dead = false
+	invisframes--;
+	visible = irandom_range(0, 1)
+}
+if !visible && invisframes <= 0 { 
+	visible = true
+}
+	
+
 if instance_exists(obj_camera) && obj_camera.timer <= 100 && !hurryup {
 	hurryup = 1
-	audio_stop_sound(global.music)
-	global.music = undefined
 	audio_play_sound(hurry_up, 1000, false)
-} else if hurryup && !global.music && !audio_is_playing(hurry_up) {
-	global.music = audio_play_sound(overworld_theme, 1000, true, 1, 0, 1.5)
+	audio_pause_sound(global.music)
+} else if hurryup && !audio_is_playing(hurry_up) {
+		audio_resume_sound(global.music)
+		audio_sound_pitch(global.music, 1.5)
 }
 if y > room_height
 	is_dead = true
 if is_dead {
 	sprite_index = spr_dead
+	mask_index = spr_null
 	vsp += grav
 	if global.music || hurryup {
 		hurryup = 0
@@ -38,7 +51,7 @@ if is_dead {
 	if y > room_height && vsp > 0
         { 
                 global.lives = clamp(global.lives - 1, 0, global.lives)
-		room_goto(transition)
+				room_goto(transition)
         }
 	exit
 }
@@ -54,11 +67,12 @@ if (move != 0) image_xscale = move;
 
 move_speed = (keyboard_check(vk_shift) ? run_speed : walk_speed)
 
-if(move_speed > walk_speed && sprite_index == spr_walk){
+/*if(move_speed > walk_speed && sprite_index == spr_walk){
 	image_speed = 1.5
 } else {
 	image_speed = 1
-}
+}*/
+image_speed = (hsp * move_speed) / 3
 
 
 
@@ -79,6 +93,7 @@ if move != 0 {
 // Jumping
 if (keyboard_check_pressed(vk_space) && !is_jumping) {
     is_jumping = true;
+	jump_initiated = true;
     vsp = jump_speed;
 	audio_play_sound(jump_sound, 10, false)
 } else if (keyboard_check_released(vk_space) && is_jumping) {
@@ -88,6 +103,17 @@ if (keyboard_check_pressed(vk_space) && !is_jumping) {
 // Update vspeed with gravity
 if (is_jumping) vsp += grav;
 
+if(move_speed == run_speed && abs(hsp) >= walk_speed)
+{
+	accel = .02;
+}
+else
+{
+	accel = .04;
+}
+
+if(!is_dead)
+{
 if(big)
 {
 	frict = .03;
@@ -107,18 +133,24 @@ else
 	spr_dead = spr_mario_die;
 	spr_brake = spr_mario_turn;
 }
+}
+
+if (vsp > 0 && place_meeting(x, y + vsp, obj_solid)) {
+jump_initiated = false;
+}
+
 
 // Change sprites based on actions
 if (is_dead) {
     sprite_index = spr_dead;
-} else if (is_jumping) {
+} else if (is_jumping && jump_initiated) {
     sprite_index = spr_jump;
 } else if (hsp == 0) {
     sprite_index = spr_idle;
+} else if ((move != 0 && hsp != 0) || (is_jumping && !jump_initiated)) {
+    sprite_index = spr_walk;
 } else if(abs(hsp - move) > 1.5 && move != 0 && abs(hsp) > .2 && sign(hsp) != sign(move)){
 	sprite_index = spr_brake
-} else {
-    sprite_index = spr_walk;
 }
 
 var whole = floor(abs(hsp)); // the integer part of hsp
@@ -145,8 +177,15 @@ if (place_meeting(x, y + vsp, obj_solid)) {
         y += sign(vsp);
     }
 	    
-    vsp = 0;
-    is_jumping = false;
+	if(vsp > 0)
+	{
+	    vsp = 0;
+	    is_jumping = false;
+	}
+	else
+	{
+		vsp = grav
+	}
 
 }
 

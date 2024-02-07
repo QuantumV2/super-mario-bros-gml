@@ -1,14 +1,16 @@
+
 // Speeds
 hurryup = 0
-walk_speed = 1.8;
-run_speed = 3.1;
+walk_speed = 1.9;
+run_speed = 3.4;
 grav = 0.2;
-jump_speed = -5.2;
+jump_speed = -5.3;
 
 move = 0;
 
 // States
-is_jumping = false;
+is_jumping = true;
+jump_initiated = false;
 is_dead = false;
 
 // Sprites
@@ -27,6 +29,8 @@ frict = .06;
 accel = .04;
 
 frozen = false
+
+invisframes = 0;
 
 mask_index = spr_mario_mask
 
