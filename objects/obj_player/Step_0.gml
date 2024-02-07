@@ -36,7 +36,10 @@ if is_dead {
 	if vsp > -5.2
 		y += vsp
 	if y > room_height && vsp > 0
+        { 
+                global.lives = clamp(global.lives - 1, 0, global.lives)
 		room_goto(transition)
+        }
 	exit
 }
 
