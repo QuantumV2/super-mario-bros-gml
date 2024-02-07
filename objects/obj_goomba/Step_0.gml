@@ -13,7 +13,7 @@ if (!place_meeting(x + sign(hsp), y, obj_solid) || place_meeting(x + sign(hsp), 
     movdir = -movdir
 }
 
-if (place_meeting(x, y + vsp, obj_solid)) {
+if (place_meeting(x, y + vsp, obj_solid) && !place_meeting(x + sign(hsp), y, obj_solidfollowcam)) {
     while (!place_meeting(x, y + sign(vsp), obj_solid)) {
         y += sign(vsp);
     }
