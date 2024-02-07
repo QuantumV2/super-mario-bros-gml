@@ -39,24 +39,21 @@ if y > room_height && !is_dead
 if is_dead {
 	sprite_index = spr_dead
 	mask_index = spr_null
-	if(!audio_is_playing(die_sound))
-	{
-		audio_play_sound(die_sound, 10, false)
-	}
 	vsp += grav
 	if global.music || hurryup {
 		hurryup = 0
 		global.music = undefined
 		audio_stop_all()
+		audio_play_sound(die_sound, 10, false)
 		vsp = -8.2
 	}
 	if vsp > -6.2
 		y += vsp
 	if y > room_height && vsp > 0
-        { 
-                global.lives = clamp(global.lives - 1, 0, global.lives)
-				room_goto(transition)
-        }
+    { 
+        global.lives = clamp(global.lives - 1, 0, global.lives)
+		room_goto(transition)
+    }
 	exit
 }
 
