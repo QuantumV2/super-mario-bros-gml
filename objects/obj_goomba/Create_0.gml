@@ -1,5 +1,5 @@
 movdir = -1
-spd = .7;
+spd = .75;
 hsp = 0;
 vsp = 0;
 grav = 0.2;

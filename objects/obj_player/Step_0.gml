@@ -52,6 +52,7 @@ if is_dead {
 	if y > room_height && vsp > 0
     { 
         global.lives = clamp(global.lives - 1, 0, global.lives)
+		instance_destroy()
 		room_goto(transition)
     }
 	exit
@@ -59,25 +60,73 @@ if is_dead {
 
 if(keyboard_check(ord("S")) && place_meeting(x, y + 1, obj_pipe) && pipe == noone)
 {
-	mask_index = spr_null
-	vsp = 1
-	ignorecollision = true
-	depth = 300
-	if(!audio_is_playing(pipe_sound))
-	{
-		audio_play_sound(pipe_sound, 10, false)
-	}
+
 	pipe = instance_place(x, y + 1, obj_pipe)
+}
+if(abs(hsp) > 0 && place_meeting(x + hsp, y, obj_pipe) && pipe == noone)
+{
+	if(instance_place(x + hsp, y, obj_pipe).vertical)
+	{
+	pipe = instance_place(x + hsp, y, obj_pipe)
+	}
 }
 
 if(pipe != noone)
 {
-	x = pipe.x + 16
-	if(y > pipe.y + 16)
+	mask_index = spr_null
+	target_door = pipe.target_door
+	ignorecollision = true
+	depth = layer_get_depth("Tiles_1") + 1
+	if(!audio_is_playing(pipe_sound))
 	{
-		pipe = noone
-		room_goto(retro)
+		audio_play_sound(pipe_sound, 10, false)
 	}
+
+	if(!pipe.vertical)
+	{
+		hsp = 0
+		x = pipe.x + 16
+		if(y > pipe.y + 16)
+		{
+			vsp = 0
+			ignorecollision = false
+			depth = 0
+			room_goto(pipe.target_room)
+			pipe = noone
+		}
+		vsp = 1
+	}
+	else if (pipe.vertical)
+	{
+		vsp = 0
+		y = pipe.y + (sprite_height / 2)
+		if(x > pipe.x + 16)
+		{
+			ignorecollision = false
+			depth = 0
+			room_goto(pipe.target_room)
+			pipe = noone
+		}
+		x += 1
+	}
+}
+
+if(place_meeting(x, y, obj_exitpipe))
+{
+	hsp = 0
+	vsp = 0
+	ignorecollision = true
+	depth = layer_get_depth("Tiles_1") + 1
+	y += -1
+	if(!audio_is_playing(pipe_sound))
+	{
+		audio_play_sound(pipe_sound, 10, false)	
+	}
+}
+else if (!place_meeting(x, y, obj_exitpipe) && pipe == noone)
+{
+	ignorecollision = false
+	depth = layer_get_depth("Instances")
 }
 
 // Get player input
@@ -116,7 +165,7 @@ var is_crouching = (keyboard_check(ord("S")) && !is_jumping) && big;
 
 // Change sprite to crouch sprite if crouching
 if (is_crouching || (keyboard_check(ord("S")) && is_jumping && big)) {
-	frict = 0.3;
+	frict = 0.2;
     sprite_index = spr_crouch;
 }
 
