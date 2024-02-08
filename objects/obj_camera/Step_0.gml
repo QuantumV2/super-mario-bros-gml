@@ -1,3 +1,4 @@
+
 if(instance_exists(obj_player))
 {
     var room_left = 0;
@@ -11,3 +12,17 @@ if timer <= 0
 	timer = 300
 }
 if instance_number(obj_camera) > 1 { instance_destroy() } //prevent multiple cameras spawning
+
+switch(palselect)
+{
+	case 0:
+		palarray = [ [ [ 230,156,33 ],[ 230,156,33 ] ],[ [ 230,156,33 ],[ 230,156,33 ] ],[ [ 230,156,33 ],[ 230,156,33 ] ] ] 
+	break
+	case 1:
+		palarray = [ [ [ 230,156,33 ],[ 156,74,0 ] ],[ [ 230,156,33 ],[ 156,74,0 ] ],[ [ 230,156,33 ],[ 156,74,0 ] ] ] 
+	break
+	case 2:
+		palarray = [ [ [ 230,156,33 ],[ 86,29,0 ] ],[ [ 230,156,33 ],[ 86,29,0 ] ],[ [ 230,156,33 ],[ 86,29,0 ] ] ] 
+	break
+}
+if(alarm[1] <= 0) { alarm[1] = (16); }
