@@ -1,0 +1,1 @@
+scr_shine(0)

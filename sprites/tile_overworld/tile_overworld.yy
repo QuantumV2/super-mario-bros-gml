@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "tile_overworld",
-  "bbox_bottom": 100,
+  "bbox_bottom": 117,
   "bbox_left": 0,
-  "bbox_right": 185,
+  "bbox_right": 202,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"9a18129f-def9-4ce6-9b86-2738fbe8cbc3",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"e66244a6-9b2d-4370-877f-c79dbaed932f",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 101,
+  "height": 118,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"5336ae7c-1410-42ec-bff3-b66d624bc6d2","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"24472e2f-f333-4555-913a-ef3efebc19da","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"9a18129f-def9-4ce6-9b86-2738fbe8cbc3","path":"sprites/tile_overworld/tile_overworld.yy",},},},"Disabled":false,"id":"8371ab73-1b2c-4791-81bc-6dea1da0f81d","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"e66244a6-9b2d-4370-877f-c79dbaed932f","path":"sprites/tile_overworld/tile_overworld.yy",},},},"Disabled":false,"id":"0ce3a339-b323-4098-bf6c-b53ac956ba2b","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 186,
+  "width": 203,
 }

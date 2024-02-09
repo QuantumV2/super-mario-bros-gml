@@ -99,7 +99,7 @@ if(pipe != noone)
 	else if (pipe.vertical)
 	{
 		vsp = 0
-		y = pipe.y + (sprite_height / 2)
+		//y = pipe.y + (pipe.image_xscale * 16) + (sprite_height / 2)
 		if(x > pipe.x + 16)
 		{
 			ignorecollision = false
@@ -156,10 +156,9 @@ if (is_dead) {
     sprite_index = spr_idle;
 } else if ((move != 0 && hsp != 0) || (is_jumping && !jump_initiated)) {
     sprite_index = spr_walk;
-} else if(abs(hsp - move) > 1.5 && move != 0 && abs(hsp) > .2 && sign(hsp) != sign(move)){
+} if(abs(hsp - move) > 1.5 && move != 0 && abs(hsp) > .2 && sign(hsp) != sign(move)){
 	sprite_index = spr_brake
 }
-
 // Update is_crouching status
 var is_crouching = (keyboard_check(ord("S")) && !is_jumping) && big;
 

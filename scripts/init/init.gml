@@ -9,3 +9,4 @@ display_set_gui_size(SCREENWIDTH, SCREENHEIGHT);
 global.world = 1
 global.level = 1
 global.lives = 3
+global.coins = 0

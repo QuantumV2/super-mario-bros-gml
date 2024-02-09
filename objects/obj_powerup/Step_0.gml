@@ -5,6 +5,18 @@ var dir = sign(hsp); // the direction hsp is pointing
 
 if (is_jumping) vsp += grav;
 
+if(place_meeting(x, y, obj_questionmarkblock))
+{
+	hsp = 0
+	movingfromblock = true;
+	y -= 1
+}
+if(!place_meeting(x, y-1, obj_questionmarkblock) && place_meeting(x, y+1, obj_questionmarkblock) && movingfromblock)
+{
+	y+=4
+	movingfromblock = false
+	is_jumping = true
+}
 for (var i = 0; i < whole; i++) {
     if (!place_meeting(x + dir, y, obj_solid) || place_meeting(x + dir, y, obj_solidfollowcam)) {
         x += dir;

@@ -2,9 +2,9 @@
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
   "name": "tile_underground",
-  "bbox_bottom": 100,
+  "bbox_bottom": 117,
   "bbox_left": 0,
-  "bbox_right": 185,
+  "bbox_right": 202,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,
@@ -13,14 +13,14 @@
   "edgeFiltering": false,
   "For3D": false,
   "frames": [
-    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"867e6c7a-920b-4887-87ae-1330b2af6529",},
+    {"resourceType":"GMSpriteFrame","resourceVersion":"1.1","name":"b844cd56-646c-403a-a7ec-917715358bfa",},
   ],
   "gridX": 0,
   "gridY": 0,
-  "height": 101,
+  "height": 118,
   "HTile": false,
   "layers": [
-    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"29d2e630-8896-4055-80a8-dfece344af8e","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
+    {"resourceType":"GMImageLayer","resourceVersion":"1.0","name":"a2158a13-4e49-462f-981d-87fbab4896b1","blendMode":0,"displayName":"default","isLocked":false,"opacity":100.0,"visible":true,},
   ],
   "nineSlice": null,
   "origin": 0,
@@ -54,7 +54,7 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"867e6c7a-920b-4887-87ae-1330b2af6529","path":"sprites/tile_underground/tile_underground.yy",},},},"Disabled":false,"id":"4b9be649-e61c-4197-bb33-56751771a571","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"b844cd56-646c-403a-a7ec-917715358bfa","path":"sprites/tile_underground/tile_underground.yy",},},},"Disabled":false,"id":"d133910a-5f49-4df7-b11e-ae1608ffdce7","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,
@@ -70,5 +70,5 @@
   },
   "type": 0,
   "VTile": false,
-  "width": 186,
+  "width": 203,
 }
