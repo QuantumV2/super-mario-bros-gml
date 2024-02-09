@@ -57,17 +57,20 @@ if is_dead {
     }
 	exit
 }
-
-if(keyboard_check(ord("S")) && place_meeting(x, y + 1, obj_pipe) && pipe == noone)
+if(movefrozen) {}
+else
 {
-
-	pipe = instance_place(x, y + 1, obj_pipe)
-}
-if(abs(hsp) > 0 && place_meeting(x + hsp, y, obj_pipe) && pipe == noone)
-{
-	if(instance_place(x + hsp, y, obj_pipe).vertical)
+	if(keyboard_check(ord("S")) && place_meeting(x, y + 1, obj_pipe) && pipe == noone)
 	{
-	pipe = instance_place(x + hsp, y, obj_pipe)
+
+		pipe = instance_place(x, y + 1, obj_pipe)
+	}
+	if(abs(hsp) > 0 && place_meeting(x + hsp, y, obj_pipe) && pipe == noone)
+	{
+		if(instance_place(x + hsp, y, obj_pipe).vertical)
+		{
+		pipe = instance_place(x + hsp, y, obj_pipe)
+		}
 	}
 }
 
@@ -145,7 +148,8 @@ move_speed = (keyboard_check(vk_shift) ? run_speed : walk_speed)
 } else {
 	image_speed = 1
 }*/
-image_speed = (hsp * move_speed) / 3.5
+
+image_speed = place_meeting(x + move, y, obj_solid) ? 1 : (hsp * move_speed) / 3.5
 
 // Change sprites based on actions
 if (is_dead) {
@@ -169,6 +173,9 @@ if (is_crouching || (keyboard_check(ord("S")) && is_jumping && big)) {
 }
 
 
+if(movefrozen) {}
+else
+{
 // Update horizontal movement
 if (!is_crouching && move != 0) {
     hsp = lerp(hsp, move * move_speed, accel);
@@ -183,18 +190,23 @@ if (!is_crouching && move != 0) {
         hsp = min(0, hsp + frict); // Friction going left
     }
 }
+}
 
 // Rest of your code...
 
 // Jumping logic
-if (keyboard_check_pressed(vk_space) && !is_jumping) {
-    is_jumping = true;
-    jump_initiated = true;
-    vsp = jump_speed;
-    is_crouching = false; // Reset crouching when jumping
-    audio_play_sound(jump_sound, 10, false)
-} else if (keyboard_check_released(vk_space) && is_jumping) {
-    if (sign(vsp) == -1) vsp /= 2;
+if(movefrozen) {}
+else
+{
+	if (keyboard_check_pressed(vk_space) && !is_jumping) {
+	    is_jumping = true;
+	    jump_initiated = true;
+	    vsp = jump_speed;
+	    is_crouching = false; // Reset crouching when jumping
+	    audio_play_sound(jump_sound, 10, false)
+	} else if (keyboard_check_released(vk_space) && is_jumping) {
+	    if (sign(vsp) == -1) vsp /= 2;
+	}
 }
 
 if(vsp > .2)

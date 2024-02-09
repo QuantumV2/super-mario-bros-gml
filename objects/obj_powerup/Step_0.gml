@@ -13,6 +13,7 @@ if(place_meeting(x, y, obj_questionmarkblock))
 }
 if(!place_meeting(x, y-1, obj_questionmarkblock) && place_meeting(x, y+1, obj_questionmarkblock) && movingfromblock)
 {
+	depth = 0
 	y+=4
 	movingfromblock = false
 	is_jumping = true

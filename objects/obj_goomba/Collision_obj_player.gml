@@ -7,7 +7,7 @@ if(other.y < y - 2 && !dead && other.is_jumping)
 }
 else
 {
-	if(!dead && sprite_index != spr_goombadead && !other.frozen && !other.is_dead)
+	if(!dead && sprite_index != spr_goombadead && !other.frozen && !other.is_dead && !other.movefrozen)
 	{
 		scr_player_get_hurt()
 	}

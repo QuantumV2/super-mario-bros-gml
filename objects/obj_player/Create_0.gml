@@ -29,7 +29,8 @@ vsp = 0;
 frict = .06;
 accel = .04;
 
-frozen = false
+frozen = false;
+movefrozen = false;
 
 target_door = "A"
 target_room = -1
