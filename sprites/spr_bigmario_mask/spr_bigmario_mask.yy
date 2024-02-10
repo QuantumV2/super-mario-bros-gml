@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "spr_bigmario_mask",
   "bbox_bottom": 30,
-  "bbox_left": 2,
+  "bbox_left": 1,
   "bbox_right": 14,
   "bbox_top": 3,
   "bboxMode": 0,

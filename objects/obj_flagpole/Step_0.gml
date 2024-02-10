@@ -36,6 +36,7 @@ if(instance_exists(player))
 						global.world++; 
 						global.level = 1;
 					}
+					obj_camera.timerfrozen = false
 					room_goto(transition)
 					global.forcepaused = false
 					global.paused = false

@@ -3,6 +3,7 @@
 hurryup = 0
 walk_speed = 1.9;
 run_speed = 3.3;
+move_speed = 0;
 grav = 0.2;
 jump_speed = -5.3;
 
@@ -43,5 +44,8 @@ invisframes = 0;
 
 mask_index = spr_mario_mask
 
+if(global.music == -1)
+{
 global.music = audio_play_sound(overworld_theme, 1000, true)
+}
 big = false

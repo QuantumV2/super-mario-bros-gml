@@ -4,7 +4,7 @@ function scr_drawgui(){
 		draw_set_font(global.font)
 		draw_text(24, 16, plrname)
 		draw_text(104, 24, global.coins > 9 ? string(global.coins) : "0" + string(global.coins)) 
-		if(room != transition)
+		if(room != transition && room != titlescreen)
 		{
 			draw_set_halign(fa_right)
 			draw_text(232, 24, timer)

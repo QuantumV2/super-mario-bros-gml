@@ -1,4 +1,4 @@
-
+global.powerup = big
 if !global.forcepaused
 {
 	if(keyboard_check_pressed(vk_enter)){
@@ -14,6 +14,10 @@ if !global.forcepaused
 		audio_play_sound(pause_sound, 10, false)
 	}
 }
+if(global.paused)
+{
+	image_speed = 0	
+}
 if(global.paused || frozen) exit;
 if(invisframes > 0)
 {
@@ -26,6 +30,8 @@ if(invisframes > 0)
 }*/
 	
 
+if(!is_dead)
+{
 if instance_exists(obj_camera) && obj_camera.timer <= 100 && !hurryup {
 	hurryup = 1
 	audio_play_sound(hurry_up, 1000, false)
@@ -33,6 +39,7 @@ if instance_exists(obj_camera) && obj_camera.timer <= 100 && !hurryup {
 } else if hurryup && !audio_is_playing(hurry_up) {
 		audio_resume_sound(global.music)
 		audio_sound_pitch(global.music, 1.5)
+}
 }
 if y > room_height && !is_dead
 	is_dead = true
@@ -74,7 +81,7 @@ else
 	}
 }
 
-if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead)
+if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead && sprite_index != spr_crouch)
 {
 	var qb = instance_place(x, y - 1, obj_questionmarkblock)
 	with(qb)
@@ -105,9 +112,9 @@ if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead)
 }
 
 
-if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_meeting(x, y - 1, obj_questionmarkblock))
+if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_meeting(x, y - 1, obj_questionmarkblock) && sprite_index != spr_crouch )
 {
-	var brick = instance_place(x, y - 1, obj_brick)
+	var brick = instance_place(x,  y - 1, obj_brick)
 	if(!brick.jumping)
 	{
 		if(!big)
@@ -131,6 +138,7 @@ if(pipe != noone)
 	target_door = pipe.target_door
 	ignorecollision = true
 	depth = layer_get_depth("Tiles_1") + 1
+	
 	if(!audio_is_playing(pipe_sound))
 	{
 		audio_play_sound(pipe_sound, 10, false)
@@ -205,7 +213,10 @@ move_speed = (keyboard_check(vk_shift) ? run_speed : walk_speed)
 	image_speed = 1
 }*/
 
-image_speed = place_meeting(x + move, y, obj_solid) ? 1 : (hsp * move_speed) / 3.5
+if(!frozen)
+{
+image_speed = (hsp * move_speed) / 3.5
+}
 
 // Change sprites based on actions
 if (is_dead) {
@@ -216,7 +227,7 @@ if (is_dead) {
     sprite_index = spr_idle;
 } else if ((move != 0 && hsp != 0) || (is_jumping && !jump_initiated)) {
     sprite_index = spr_walk;
-} if(abs(hsp - move) > 1.5 && move != 0 && abs(hsp) > .2 && sign(hsp) != sign(move)){
+} if(abs(hsp - move) > 1.5 && move != 0 && abs(hsp) > .2 && sign(hsp) != sign(move) && !is_jumping){
 	sprite_index = spr_brake
 }
 // Update is_crouching status
@@ -240,6 +251,7 @@ if (!is_crouching && move != 0) {
 } else {
     // Apply friction when not moving
     if (hsp > 0 && move == 0) {
+
         hsp = max(0, hsp - frict); // Friction going right
     }
     if (hsp < 0 && move == 0) {
@@ -248,7 +260,7 @@ if (!is_crouching && move != 0) {
 }
 }
 
-// Rest of your code...
+if(sprite_index == spr_jump && !is_jumping) { sprite_index = spr_walk; }
 
 // Jumping logic
 if(movefrozen) {}
@@ -380,6 +392,7 @@ if(string_ends_with(room_get_name(room), "_cutscene"))
 	if(place_meeting(x+1, y - 8, obj_solid)){
 		if(!audio_is_playing(pipe_sound))
 		{
+			audio_stop_all()
 		audio_play_sound(pipe_sound, 10, false)
 		alarm_set(1, 60 * 0.79)
 		}

@@ -6,6 +6,7 @@ timer = 300;
 timerfrozen = false;
 point = 0
 spr_pal = spr_coinpal
+plrname = ""
 
 palselect = 1
 shinedir = 1

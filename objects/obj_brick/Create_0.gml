@@ -7,12 +7,10 @@ if(abs(image_xscale) > 1|| abs(image_yscale) > 1)
 	}
 	instance_destroy(id, false)
 }
+drawoffsety = 0
+offsetdir = 1
 jumping = false
-vsp = -2
-grav = 0.2
-startposy = y
-
-if(room == mario_1_2 && object_index == obj_brick)
+if(object_index == obj_brick)
 {
-	sprite_index = spr_underground_brick
+	 sprite_index = array_contains(global.undergroundlevels, room) ? spr_underground_brick : spr_brick
 }
