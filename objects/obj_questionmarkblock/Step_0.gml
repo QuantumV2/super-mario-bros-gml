@@ -14,4 +14,4 @@ if(jumping)
 		jumping = false;
 	}
 }
-scr_shine()
+scr_shine(0)
