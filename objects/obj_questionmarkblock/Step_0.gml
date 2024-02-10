@@ -14,3 +14,4 @@ if(jumping)
 		jumping = false;
 	}
 }
+scr_shine()
