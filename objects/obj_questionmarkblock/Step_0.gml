@@ -1,23 +1,13 @@
-if(place_meeting(x, y + 1, obj_player) && sprite_index != spr_usedblock && sprite_index != spr_qbbounce && image_yscale > 0)
+if(jumping)
 {
-	sprite_index = spr_qbbounce
-	mask_index = -1
-	if(object == obj_powerup)
+	y += vsp
+	vsp = approach(vsp, startposy, grav)
+	if(y = startposy)
 	{
-		with(instance_create_layer(x + 8, y, "Instances", obj_powerup))
-		{
-			depth = other.depth + 1
-		}
-		audio_play_sound(power_up_appear, 10, false)
+		jumping = false
 	}
-	else
+	if(vsp < 0)
 	{
-		global.coins++;
-		with(instance_create_layer(x + 8, y, "Instances", obj_coineffect))
-		{
-			depth = other.depth + 1
-		}
-		audio_play_sound(coin, 10, false)
+		sprite_index = changetosprite	
 	}
 }
-scr_shine(0)

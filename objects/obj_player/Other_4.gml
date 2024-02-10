@@ -4,3 +4,4 @@ if(instance_exists(door))
 	x = door.x
 	y = door.y
 }
+target_door = "A"

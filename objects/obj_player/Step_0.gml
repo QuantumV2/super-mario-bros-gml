@@ -47,7 +47,7 @@ if is_dead {
 		audio_play_sound(die_sound, 10, false)
 		vsp = -8.2
 	}
-	if vsp > -6.2
+	if vsp > -4.2
 		y += vsp
 	if y > room_height && vsp > 0
     { 
@@ -73,6 +73,57 @@ else
 		}
 	}
 }
+
+if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead)
+{
+	var qb = instance_place(x, y - 1, obj_questionmarkblock)
+	with(qb)
+	{
+		if(!jumping && sprite_index != changetosprite)
+			{
+			jumping  = true
+			//mask_index = -1
+			if(object == obj_powerup)
+			{
+				with(instance_create_layer(x + 8, y, "Instances", obj_powerup))
+				{
+					depth = other.depth + 1
+				}
+				audio_play_sound(power_up_appear, 10, false)
+			}
+			else
+			{
+				global.coins++;
+				with(instance_create_layer(x + 8, y, "Instances", obj_coineffect))
+				{
+					depth = other.depth + 1
+				}
+				audio_play_sound(coin, 10, false)
+			}
+		}
+	}
+}
+
+
+if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_meeting(x, y - 1, obj_questionmarkblock))
+{
+	var brick = instance_place(x, y - 1, obj_brick)
+	if(!brick.jumping)
+	{
+		if(!big)
+		{
+			brick.jumping = true
+			//brick.mask_index = spr_null
+			audio_play_sound(bump_sound, 10, false)
+		}
+		else
+		{
+			audio_play_sound(break_block, 10, false)
+			instance_destroy(brick)
+		}
+	}
+}
+
 
 if(pipe != noone)
 {
@@ -132,8 +183,13 @@ else if (!place_meeting(x, y, obj_exitpipe) && pipe == noone)
 	depth = layer_get_depth("Instances")
 }
 
+if(!movefrozen) {
 // Get player input
 move = keyboard_check(ord("D")) - keyboard_check(ord("A"));
+
+} else {
+	move = 0
+}
 
 // Set horizontal speed
 //hsp = move * (keyboard_check(vk_shift) ? run_speed : walk_speed);
@@ -317,3 +373,16 @@ if !(place_meeting(x, y + 16, obj_solid))
 	
 y += vsp;
 
+if(string_ends_with(room_get_name(room), "_cutscene"))
+{
+	movefrozen = true
+	hsp = 1
+	if(place_meeting(x+1, y - 8, obj_solid)){
+		if(!audio_is_playing(pipe_sound))
+		{
+		audio_play_sound(pipe_sound, 10, false)
+		alarm_set(1, 60 * 0.79)
+		}
+
+	}
+}
