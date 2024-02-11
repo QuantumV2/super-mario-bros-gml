@@ -49,3 +49,6 @@ if(global.music == -1)
 global.music = audio_play_sound(overworld_theme, 1000, true)
 }
 big = false
+
+palarray = []
+spr_pal = spr_mariopal

@@ -41,6 +41,7 @@ if(instance_exists(player))
 					global.forcepaused = false
 					global.paused = false
 					target_door = "A"
+					if(global.twoplayer) { global.luigi = !global.luigi; }
 					instance_destroy()
 				}
 			}

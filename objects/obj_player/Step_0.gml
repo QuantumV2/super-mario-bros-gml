@@ -28,7 +28,16 @@ if(invisframes > 0)
 /*if !visible && invisframes <= 0 { 
 	visible = true
 }*/
-	
+
+
+if(global.luigi)
+{
+	palarray = [ [ [ 181,49,32 ],[ 255,254,255 ] ],[ [ 234,158,34 ],[ 234,158,34 ] ],[ [ 107,109,0 ],[ 56,135,0 ] ] ] 
+}
+else
+{
+	palarray = [ [ [ 181,49,32 ],[ 181,49,32 ] ],[ [ 234,158,34 ],[ 234,158,34 ] ],[ [ 107,109,0 ],[ 107,109,0 ] ] ] 
+}
 
 if(!is_dead)
 {
@@ -59,6 +68,7 @@ if is_dead {
 	if y > room_height && vsp > 0
     { 
         global.lives = clamp(global.lives - 1, 0, global.lives)
+		if(global.twoplayer) { global.luigi = !global.luigi; }
 		instance_destroy()
 		room_goto(transition)
     }

@@ -13,3 +13,4 @@ global.coins = 0
 global.cutscene = 0
 global.undergroundlevels = [mario_1_2]
 global.powerup = 0
+global.twoplayer = false
