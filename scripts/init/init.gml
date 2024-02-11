@@ -8,9 +8,9 @@ display_set_gui_size(SCREENWIDTH, SCREENHEIGHT);
 #macro SCREENHEIGHT 240
 global.world = 1
 global.level = 1
-global.lives = 3
+global.lives = [3, 3]
 global.coins = 0
 global.cutscene = 0
 global.undergroundlevels = [mario_1_2]
-global.powerup = 0
+global.powerup = [0,0]
 global.twoplayer = false

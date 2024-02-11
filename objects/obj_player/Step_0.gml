@@ -1,4 +1,4 @@
-global.powerup = big
+global.powerup[global.luigi] = big
 if !global.forcepaused
 {
 	if(keyboard_check_pressed(vk_enter)){
@@ -30,14 +30,7 @@ if(invisframes > 0)
 }*/
 
 
-if(global.luigi)
-{
-	palarray = [ [ [ 181,49,32 ],[ 255,254,255 ] ],[ [ 234,158,34 ],[ 234,158,34 ] ],[ [ 107,109,0 ],[ 56,135,0 ] ] ] 
-}
-else
-{
-	palarray = [ [ [ 181,49,32 ],[ 181,49,32 ] ],[ [ 234,158,34 ],[ 234,158,34 ] ],[ [ 107,109,0 ],[ 107,109,0 ] ] ] 
-}
+
 
 if(!is_dead)
 {
@@ -67,7 +60,7 @@ if is_dead {
 		y += vsp
 	if y > room_height && vsp > 0
     { 
-        global.lives = clamp(global.lives - 1, 0, global.lives)
+        global.lives[global.luigi] = clamp(global.lives[global.luigi] - 1, 0, global.lives[global.luigi])
 		if(global.twoplayer) { global.luigi = !global.luigi; }
 		instance_destroy()
 		room_goto(transition)
@@ -384,6 +377,11 @@ if (place_meeting(x, y + vsp, obj_solid)) {
 	}
 
 }
+}
+
+if (place_meeting(x, y + vsp, obj_solid) && abs(vsp) > 0 && place_meeting(x + hsp, y, obj_solid) && !ignorecollision) {
+	y -= vsp
+	x += hsp
 }
 
 if !(place_meeting(x, y + 16, obj_solid))

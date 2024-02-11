@@ -8,7 +8,6 @@ if(instance_exists(player))
 			if(place_meeting(x, y+8, obj_solid)){
 				other.playershouldwalk = true
 				x += 8
-				audio_stop_all()
 				audio_play_sound(stage_clear, 9999, false)
 			}
 			else

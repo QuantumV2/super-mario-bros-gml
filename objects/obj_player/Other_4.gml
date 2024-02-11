@@ -5,4 +5,4 @@ if(instance_exists(door))
 	y = (door.y + 8) - sprite_height
 }
 target_door = "A"
-big = global.powerup
+big = global.powerup[global.luigi]

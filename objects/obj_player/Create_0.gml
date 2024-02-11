@@ -51,4 +51,12 @@ global.music = audio_play_sound(overworld_theme, 1000, true)
 big = false
 
 palarray = []
-spr_pal = spr_mariopal
+
+if(global.luigi)
+{
+	palarray = [ [ [ 181,49,32 ],[ 255,254,255 ] ],[ [ 234,158,34 ],[ 234,158,34 ] ],[ [ 107,109,0 ],[ 56,135,0 ] ] ] 
+}
+else
+{
+	palarray = [ [ [ 181,49,32 ],[ 181,49,32 ] ],[ [ 234,158,34 ],[ 234,158,34 ] ],[ [ 107,109,0 ],[ 107,109,0 ] ] ] 
+}

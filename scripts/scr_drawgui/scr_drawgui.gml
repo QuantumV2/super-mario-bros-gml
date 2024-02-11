@@ -7,7 +7,16 @@ function scr_drawgui(){
 		if(room != transition && room != titlescreen)
 		{
 			draw_set_halign(fa_right)
-			draw_text(232, 24, timer)
+			var timertext = string(timer)
+			if(real(timertext) >= 10 && real(timertext) < 100)
+			{
+				timertext = "0" + timertext
+			} 
+			else if (real(timertext) < 10)
+			{
+				timertext = "00" + timertext
+			}
+			draw_text(232, 24, timertext)
 		}
 		draw_set_halign(fa_center)
 		draw_text(164, 24, string(global.world) + "-" + string(global.level))
