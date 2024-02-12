@@ -1,4 +1,4 @@
-
+if(instance_number(object_index) > 1) instance_destroy(); 
 // Speeds
 hurryup = 0
 walk_speed = 1.9;
@@ -8,6 +8,8 @@ grav = 0.2;
 jump_speed = -5.3;
 
 move = 0;
+
+camoffset = 0;
 
 // States
 is_jumping = true;

@@ -1,4 +1,5 @@
 if(dead) exit;
+if(global.paused) exit;
 if(scr_onscreen())
 {
 hsp = spd * movdir

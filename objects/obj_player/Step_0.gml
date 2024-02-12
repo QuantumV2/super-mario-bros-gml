@@ -84,7 +84,7 @@ else
 	}
 }
 
-if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead && sprite_index != spr_crouch)
+if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead)
 {
 	var qb = instance_place(x, y - 1, obj_questionmarkblock)
 	with(qb)
@@ -115,7 +115,7 @@ if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead 
 }
 
 
-if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_meeting(x, y - 1, obj_questionmarkblock) && sprite_index != spr_crouch )
+if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_meeting(x, y - 1, obj_questionmarkblock))
 {
 	var brick = instance_place(x,  y - 1, obj_brick)
 	if(!brick.jumping)
@@ -138,6 +138,7 @@ if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_me
 if(pipe != noone)
 {
 	mask_index = spr_null
+	camoffset = pipe.camoffset
 	target_door = pipe.target_door
 	ignorecollision = true
 	depth = layer_get_depth("Tiles_1") + 1
@@ -169,6 +170,7 @@ if(pipe != noone)
 		{
 			ignorecollision = false
 			depth = 0
+
 			room_goto(pipe.target_room)
 			pipe = noone
 		}
