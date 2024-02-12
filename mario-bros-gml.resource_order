@@ -104,6 +104,7 @@
     {"name":"overworld_theme","order":4,"path":"sounds/overworld_theme/overworld_theme.yy",},
     {"name":"mario_1_2_cutscene","order":6,"path":"rooms/mario_1_2_cutscene/mario_1_2_cutscene.yy",},
     {"name":"tile_castle","order":63,"path":"sprites/tile_castle/tile_castle.yy",},
+    {"name":"scr_padstring","order":17,"path":"scripts/scr_padstring/scr_padstring.yy",},
     {"name":"scr_shine","order":16,"path":"scripts/scr_shine/scr_shine.yy",},
     {"name":"spr_questionblock","order":31,"path":"sprites/spr_questionblock/spr_questionblock.yy",},
     {"name":"coin","order":9,"path":"sounds/coin/coin.yy",},

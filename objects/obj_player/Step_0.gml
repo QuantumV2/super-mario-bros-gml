@@ -29,9 +29,6 @@ if(invisframes > 0)
 	visible = true
 }*/
 
-
-
-
 if(!is_dead)
 {
 if instance_exists(obj_camera) && obj_camera.timer <= 100 && !hurryup {
@@ -46,6 +43,7 @@ if instance_exists(obj_camera) && obj_camera.timer <= 100 && !hurryup {
 if y > room_height && !is_dead
 	is_dead = true
 if is_dead {
+	obj_camera.timerfrozen = true
 	sprite_index = spr_dead
 	mask_index = spr_null
 	vsp += grav
@@ -58,7 +56,7 @@ if is_dead {
 	}
 	if vsp > -4.2
 		y += vsp
-	if y > room_height && vsp > 0
+	if y > room_height && vsp > 0 && !audio_is_playing(die_sound)
     { 
 		
         global.lives[global.luigi] = clamp(global.lives[global.luigi] - 1, 0, global.lives[global.luigi])
@@ -112,6 +110,7 @@ if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead)
 					depth = other.depth + 1
 				}
 				audio_play_sound(coin, 10, false)
+				global.scores[global.luigi] += 200
 			}
 		}
 	}
@@ -132,6 +131,7 @@ if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_me
 		else
 		{
 			audio_play_sound(break_block, 10, false)
+			global.scores[global.luigi] += 50
 			instance_destroy(brick)
 		}
 	}
@@ -400,6 +400,7 @@ y += vsp;
 
 if(string_ends_with(room_get_name(room), "_cutscene"))
 {
+	obj_camera.timerfrozen = true
 	movefrozen = true
 	hsp = 1
 	if(place_meeting(x+1, y - 8, obj_solid)){
@@ -407,6 +408,7 @@ if(string_ends_with(room_get_name(room), "_cutscene"))
 		{
 			audio_stop_all()
 		audio_play_sound(pipe_sound, 10, false)
+
 		alarm_set(1, 60 * 0.79)
 		}
 

@@ -4,7 +4,7 @@
   "name": "spr_bigmario_mask",
   "bbox_bottom": 30,
   "bbox_left": 3,
-  "bbox_right": 13,
+  "bbox_right": 12,
   "bbox_top": 3,
   "bboxMode": 0,
   "collisionKind": 1,

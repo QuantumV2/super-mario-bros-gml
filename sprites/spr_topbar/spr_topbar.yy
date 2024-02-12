@@ -3,7 +3,7 @@
   "resourceVersion": "1.0",
   "name": "spr_topbar",
   "bbox_bottom": 31,
-  "bbox_left": 24,
+  "bbox_left": 89,
   "bbox_right": 230,
   "bbox_top": 16,
   "bboxMode": 0,

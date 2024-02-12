@@ -1,3 +1,4 @@
+obj_camera.timerfrozen = false
 if((global.lives == [0,0] && global.twoplayer) || (global.lives[0] == 0 && !global.twoplayer))
 {
 	game_restart()	
@@ -11,6 +12,7 @@ if (level == mario_1_2 && global.cutscene = 0)
 else
 {
 room_goto(level)
+obj_camera.timer = 400
 }
 }
 //room_goto(retro)

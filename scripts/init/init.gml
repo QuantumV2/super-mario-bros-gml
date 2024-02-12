@@ -14,3 +14,4 @@ global.cutscene = 0
 global.undergroundlevels = [mario_1_1_subarea, mario_1_2, mario_1_2_subarea]
 global.powerup = [0,0]
 global.twoplayer = false
+global.scores = [0, 0]

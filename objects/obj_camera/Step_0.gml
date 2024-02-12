@@ -7,11 +7,19 @@ if(instance_exists(obj_player))
     camera_set_view_pos(view_camera[0], point, 0);
 	camoffset = 0;
 }
-if timer <= 0
+if timer <= 0 && !timerfrozen
 {
 	obj_player.is_dead = true	
-	timer = 300
+	timer = 400
 }
 if instance_number(obj_camera) > 1 { instance_destroy() } //prevent multiple cameras spawning
 
-scr_shine(1)
+if(room != transition && room != titlescreen)
+{
+	scr_shine(1)
+}
+else
+{
+	palselect = 0	
+	palarray = [ [ [ 230,156,33 ],[ 230,156,33 ] ],[ [ 230,156,33 ],[ 230,156,33 ] ],[ [ 230,156,33 ],[ 230,156,33 ] ] ] 
+}

@@ -11,5 +11,5 @@ switch(palselect)
 		palarray = [ [ [ 230,156,33 ],[ 86,29,0 ] ],[ [ 230,156,33 ],[ 86,29,0 ] ],[ [ 230,156,33 ],[ 86,29,0 ] ] ] 
 	break
 }
-if(alarm[_alarm] <= 0) { alarm[_alarm] = (12); }
+if(alarm[_alarm] <= 0) { alarm[_alarm] = (60/5); }
 }

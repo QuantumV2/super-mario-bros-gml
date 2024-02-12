@@ -125,6 +125,7 @@
     {"id":{"name":"overworld_theme","path":"sounds/overworld_theme/overworld_theme.yy",},},
     {"id":{"name":"mario_1_2_cutscene","path":"rooms/mario_1_2_cutscene/mario_1_2_cutscene.yy",},},
     {"id":{"name":"tile_castle","path":"sprites/tile_castle/tile_castle.yy",},},
+    {"id":{"name":"scr_padstring","path":"scripts/scr_padstring/scr_padstring.yy",},},
     {"id":{"name":"scr_shine","path":"scripts/scr_shine/scr_shine.yy",},},
     {"id":{"name":"spr_questionblock","path":"sprites/spr_questionblock/spr_questionblock.yy",},},
     {"id":{"name":"coin","path":"sounds/coin/coin.yy",},},

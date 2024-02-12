@@ -3,6 +3,7 @@ function scr_drawgui(){
 		draw_sprite(spr_topbar, 0, 0, 0)
 		draw_set_font(global.font)
 		draw_text(24, 16, plrname)
+		draw_text(16, 24, global.scores[global.luigi] < 1000000 ? " " + scr_padstring(string(global.scores[global.luigi]), "0", 6) : string(global.scores[global.luigi]))
 		draw_text(104, 24, global.coins > 9 ? string(global.coins) : "0" + string(global.coins)) 
 		if(room != transition && room != titlescreen)
 		{
