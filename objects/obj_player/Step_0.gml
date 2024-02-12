@@ -98,7 +98,7 @@ if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead)
 			{
 				with(instance_create_layer(x + 8, y, "Instances", obj_powerup))
 				{
-					depth = other.depth - 1
+					depth = other.depth + 1
 				}
 				audio_play_sound(power_up_appear, 10, false)
 			}
