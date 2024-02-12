@@ -11,6 +11,6 @@ global.level = 1
 global.lives = [3, 3]
 global.coins = 0
 global.cutscene = 0
-global.undergroundlevels = [mario_1_2]
+global.undergroundlevels = [mario_1_1_subarea, mario_1_2, mario_1_2_subarea]
 global.powerup = [0,0]
 global.twoplayer = false

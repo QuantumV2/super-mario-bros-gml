@@ -4,7 +4,7 @@
   "name": "spr_mario_mask",
   "bbox_bottom": 14,
   "bbox_left": 3,
-  "bbox_right": 12,
+  "bbox_right": 13,
   "bbox_top": 0,
   "bboxMode": 0,
   "collisionKind": 1,

@@ -60,8 +60,11 @@ if is_dead {
 		y += vsp
 	if y > room_height && vsp > 0
     { 
+		
         global.lives[global.luigi] = clamp(global.lives[global.luigi] - 1, 0, global.lives[global.luigi])
-		if(global.twoplayer) { global.luigi = !global.luigi; }
+		if(global.twoplayer && global.lives[!global.luigi] > 0) { global.luigi = !global.luigi; }
+		global.powerup[global.luigi] = 0
+		
 		instance_destroy()
 		room_goto(transition)
     }
@@ -97,7 +100,7 @@ if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead)
 			{
 				with(instance_create_layer(x + 8, y, "Instances", obj_powerup))
 				{
-					depth = other.depth + 1
+					depth = other.depth - 1
 				}
 				audio_play_sound(power_up_appear, 10, false)
 			}
