@@ -1,4 +1,4 @@
-depth = -1000
+depth = -9999
 
 if(instance_number(object_index) > 1) instance_destroy(); 
 // Speeds
