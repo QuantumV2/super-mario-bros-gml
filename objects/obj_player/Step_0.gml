@@ -40,7 +40,7 @@ if instance_exists(obj_camera) && obj_camera.timer <= 100 && !hurryup {
 		audio_sound_pitch(global.music, 1.5)
 }
 }
-if y > room_height && !is_dead
+if y > room_height && !is_dead && pipe == noone
 	is_dead = true
 if is_dead {
 	obj_camera.timerfrozen = true
@@ -73,13 +73,17 @@ else
 {
 	if(keyboard_check(ord("S")) && place_meeting(x, y + 1, obj_pipe) && pipe == noone)
 	{
-
+		if(!instance_place(x, y + 1, obj_pipe).vertical)
+		{
+		audio_play_sound(pipe_sound, 10, false)
 		pipe = instance_place(x, y + 1, obj_pipe)
+		}
 	}
 	if(abs(hsp) > 0 && place_meeting(x + hsp, y, obj_pipe) && pipe == noone)
 	{
 		if(instance_place(x + hsp, y, obj_pipe).vertical)
 		{
+		audio_play_sound(pipe_sound, 10, false)
 		pipe = instance_place(x + hsp, y, obj_pipe)
 		}
 	}
@@ -111,6 +115,7 @@ if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead)
 				}
 				audio_play_sound(coin, 10, false)
 				global.scores[global.luigi] += 200
+
 			}
 		}
 	}
@@ -145,17 +150,12 @@ if(pipe != noone)
 	target_door = pipe.target_door
 	ignorecollision = true
 	depth = layer_get_depth("Tiles_1") + 1
-	
-	if(!audio_is_playing(pipe_sound))
-	{
-		audio_play_sound(pipe_sound, 10, false)
-	}
 
 	if(!pipe.vertical)
 	{
 		hsp = 0
 		x = pipe.x + 16
-		if(y > pipe.y + 16)
+		if(!audio_is_playing(pipe_sound))
 		{
 			vsp = 0
 			ignorecollision = false
@@ -169,7 +169,7 @@ if(pipe != noone)
 	{
 		vsp = 0
 		//y = pipe.y + (pipe.image_xscale * 16) + (sprite_height / 2)
-		if(x > pipe.x + 16)
+		if(!audio_is_playing(pipe_sound))
 		{
 			ignorecollision = false
 			depth = 0

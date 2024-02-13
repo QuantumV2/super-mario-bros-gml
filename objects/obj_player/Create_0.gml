@@ -1,3 +1,5 @@
+depth = -1000
+
 if(instance_number(object_index) > 1) instance_destroy(); 
 // Speeds
 hurryup = 0

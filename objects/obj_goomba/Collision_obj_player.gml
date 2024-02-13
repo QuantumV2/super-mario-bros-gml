@@ -4,6 +4,10 @@ if(other.y < y - 2 && !dead && other.is_jumping)
 	sprite_index = spr_goombadead
 	dead = true
 	global.scores[global.luigi] += 100
+	with(instance_create_layer(x, y - 8, "Instances", obj_scoreparticle))
+	{
+		scorenumber = 100
+	}
 	alarm[0] = 25
 }
 else

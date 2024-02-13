@@ -1,6 +1,22 @@
 if(instance_exists(player))
 {
 	obj_flag.y = approach(obj_flag.y, (y + (image_yscale * 16)) - 8, 2);
+	var targetscore = 0
+	if(other.plrheight > 196) targetscore = 100
+	if(other.plrheight < 196) targetscore = 400
+	if(other.plrheight < 128) targetscore = 800
+	if(other.plrheight < 96) targetscore = 2000
+	if(other.plrheight < 64) targetscore = 5000
+
+	if(!instance_exists(obj_scoreparticle) && !scoreshown)
+	{
+		with(instance_create_layer(x, plrheight, "Instances", obj_scoreparticle))
+		{
+			targety = obj_flagpole.y
+			scorenumber = targetscore
+		}
+		scoreshown = true
+	}
 	if(!playershouldwalk)
 	{
 		with(player)
@@ -27,12 +43,7 @@ if(instance_exists(player))
 				depth = layer_get_depth("Tiles_1") + 1
 				global.paused = true
 				global.forcepaused = true
-				var targetscore = 0
-				if(other.plrheight > 196) targetscore = 100
-				if(other.plrheight < 196) targetscore = 400
-				if(other.plrheight < 128) targetscore = 800
-				if(other.plrheight < 96) targetscore = 2000
-				if(other.plrheight < 64) targetscore = 5000
+
 				if(global.scores[global.luigi] < other._score + targetscore)
 				{
 					global.scores[global.luigi] += 10;	
