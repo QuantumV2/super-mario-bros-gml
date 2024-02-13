@@ -14,3 +14,4 @@ if(object_index == obj_brick)
 {
 	 sprite_index = array_contains(global.undergroundlevels, room) ? spr_underground_brick : spr_brick
 }
+depth = obj_player + 1

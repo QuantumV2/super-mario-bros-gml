@@ -285,14 +285,14 @@ else
 	}
 }
 
-if(vsp > .2)
+if(vsp > .2 && !is_dead)
 {
-	vsp += 0.1
+	vsp += 0.3
 }
 
 // Update vspeed with gravity
 
-if (is_jumping && vsp < (grav * 13)) vsp += grav;
+if (is_jumping && vsp < (grav * 6)) vsp += grav;
 
 
 if(move_speed == run_speed && abs(hsp) >= walk_speed)

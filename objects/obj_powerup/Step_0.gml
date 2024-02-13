@@ -14,7 +14,7 @@ if(place_meeting(x, y, obj_questionmarkblock))
 }
 if(!place_meeting(x, y-1, obj_questionmarkblock) && place_meeting(x, y+1, obj_questionmarkblock) && movingfromblock)
 {
-	depth = instance_place(x, y+1, obj_questionmarkblock).depth - 1
+	depth = obj_player.depth
 	movingfromblock = false
 	is_jumping = true
 }
