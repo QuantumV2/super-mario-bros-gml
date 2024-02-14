@@ -21,14 +21,22 @@ if(instance_exists(player))
 	{
 		with(player)
 		{
-			if(place_meeting(x, y+8, obj_solid)){
-				other.playershouldwalk = true
-				x += 8
-				audio_play_sound(stage_clear, 9999, false)
+			if(place_meeting(x, y+2, obj_solid)){
+				if(other.alarm[0] <= 0)
+				{
+					if !other.playershouldwalk
+					{
+						image_speed  = 0
+						other.alarm[0] = 15
+					}
+				}
 			}
 			else
 			{
-				y += 2;
+				if(other.alarm[0] <= 0)
+				{
+					y += 2;
+				}
 			}
 		}
 	}
