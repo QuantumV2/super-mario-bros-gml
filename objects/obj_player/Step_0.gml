@@ -5,11 +5,11 @@ if !global.forcepaused
 		global.paused = !global.paused
 		if(global.paused)
 		{
-			audio_pause_sound(global.music)	
+			audio_pause_all()
 		}
 		else
 		{
-			audio_resume_sound(global.music)	
+			audio_resume_all()
 		}
 		audio_play_sound(pause_sound, 10, false)
 	}
@@ -29,13 +29,23 @@ if(invisframes > 0)
 	visible = true
 }*/
 
-if(place_meeting(x, y + 1, obj_movingplatform))
+if (place_meeting(x, y + vsp, obj_movingplatform))
 {
-	if(!jump_initiated)
-	{
-		is_jumping = false
-		y = instance_nearest(x,y,obj_movingplatform).y - 1
-	}
+    var inst;
+    inst = instance_place(x, y + vsp, obj_movingplatform);
+    y = inst.y - (sprite_height / 2);
+	is_jumping = false
+	jump_initiated = false
+    vsp = inst.dir;
+}
+if (place_meeting(x + hsp, y + 1, obj_movingplatformhor))
+{
+
+    var inst = instance_place(x + hsp, y + 1, obj_movingplatformhor);
+    if(inst != noone)
+    {
+        x += inst.dir; 
+    }
 }
 
 if(!is_dead)
@@ -107,9 +117,9 @@ if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead)
 			{
 			jumping  = true
 			//mask_index = -1
-			if(object == obj_powerup)
+			if(object == obj_powerup || object == obj_oneup)
 			{
-				with(instance_create_layer(x + 8, y, "Instances", obj_powerup))
+				with(instance_create_layer(x + 8, y, "Instances", object))
 				{
 					depth = other.depth + 1
 				}
@@ -145,9 +155,9 @@ if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_me
 				with(brick)
 				{
 					changetosprite = spr_usedblock
-					if(object == obj_powerup)
+					if(object == obj_powerup || object == obj_oneup)
 					{
-						with(instance_create_layer(x + 8, y, "Instances", obj_powerup))
+						with(instance_create_layer(x + 8, y, "Instances", object))
 						{
 							depth = other.depth + 1
 						}

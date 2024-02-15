@@ -7,6 +7,7 @@ if(jumping)
 	if(offsetdir < 0)
 	{
 		sprite_index = changetosprite
+		visible = true
 	}
 	if (drawoffsety <= 0) {
 		offsetdir = 1

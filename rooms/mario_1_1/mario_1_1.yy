@@ -73,6 +73,8 @@
     {"name":"inst_21FDAC0E","path":"rooms/mario_1_1/mario_1_1.yy",},
     {"name":"inst_7BB8AE30","path":"rooms/mario_1_1/mario_1_1.yy",},
     {"name":"inst_1B0D692A","path":"rooms/mario_1_1/mario_1_1.yy",},
+    {"name":"inst_60ECE727","path":"rooms/mario_1_1/mario_1_1.yy",},
+    {"name":"inst_73DA7DB4","path":"rooms/mario_1_1/mario_1_1.yy",},
     {"name":"inst_32179218","path":"rooms/mario_1_1/mario_1_1.yy",},
     {"name":"inst_3707847A","path":"rooms/mario_1_1/mario_1_1.yy",},
     {"name":"inst_364FD4CC","path":"rooms/mario_1_1/mario_1_1.yy",},
@@ -94,10 +96,9 @@
     {"name":"inst_6085F0B3","path":"rooms/mario_1_1/mario_1_1.yy",},
     {"name":"inst_9AF73C4","path":"rooms/mario_1_1/mario_1_1.yy",},
     {"name":"inst_280A3EA","path":"rooms/mario_1_1/mario_1_1.yy",},
-    {"name":"inst_60ECE727","path":"rooms/mario_1_1/mario_1_1.yy",},
     {"name":"inst_74CBBDE3","path":"rooms/mario_1_1/mario_1_1.yy",},
     {"name":"inst_34305C99","path":"rooms/mario_1_1/mario_1_1.yy",},
-    {"name":"inst_73DA7DB4","path":"rooms/mario_1_1/mario_1_1.yy",},
+    {"name":"inst_180A86A3","path":"rooms/mario_1_1/mario_1_1.yy",},
   ],
   "isDnd": false,
   "layers": [
@@ -125,6 +126,7 @@
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_280A3EA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_goomba","path":"objects/obj_goomba/obj_goomba.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":824.0,"y":200.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_74CBBDE3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_doorD","path":"objects/obj_doorD/obj_doorD.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2880.0,"y":208.0,},
         {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_34305C99","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_koopa","path":"objects/obj_koopa/obj_koopa.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1722.0,"y":201.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_180A86A3","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_questionmarkblock","path":"objects/obj_questionmarkblock/obj_questionmarkblock.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1024.0,"y":128.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":15,"SerialiseWidth":224,"TileCompressedData":[
 -146,-2147483648,-31,0,-193,-2147483648,-40,0,-57,-2147483648,3,8,9,10,-14,-2147483648,4,8,9,9,10,-27,-2147483648,3,8,9,10,-14,-2147483648,4,8,9,9,10,-27,-2147483648,3,8,9,10,-14,-2147483648,4,8,9,9,10,-10,-2147483648,-17,0,3,8,9,10,-14,0,6,8,9,9,10,0,0,-11,-2147483648,3,0,53,0,-11,-2147483648,3,8,9,10,-18,-2147483648,3,8,9,10,-5,-2147483648,-3,0,3,20,21,22,-5,-2147483648,1,8,-3,9,1,10,-4,-2147483648,4,20,21,21,22,-16,-2147483648,3,8,9,10,-8,-2147483648,3,20,21,22,-5,-2147483648,1,8,-3,9,1,10,-4,-2147483648,4,20,21,21,22,-16,-2147483648,3,8,9,10,-8,-2147483648,3,20,21,22,-5,-2147483648,1,8,-3,9,1,10,-4,-2147483648,4,20,21,21,22,-10,-2147483648,-6,0,3,8,9,10,-8,0,3,20,21,22,-5,0,1,8,-3,9,1,10,-4,0,6,20,21,21,22,0,0,-12,-2147483648,5,65,-2147483648,8,9,10,-8,-2147483648,3,20,21,22,-5,-2147483648,1,8,-3,9,1,10,-8,-2147483648,3,20,21,22,-16,-2147483648,1,20,-3,21,

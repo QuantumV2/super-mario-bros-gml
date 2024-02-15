@@ -13,6 +13,7 @@ if(!moving || (moving && other.is_jumping && !other.is_dead))
 	}
 	else
 	{
+		global.scores[global.luigi] += 400
 		audio_play_sound(kick, 10, false)
 	}
 }
