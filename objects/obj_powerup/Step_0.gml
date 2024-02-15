@@ -6,13 +6,13 @@ var dir = sign(hsp); // the direction hsp is pointing
 
 if (is_jumping) vsp += grav;
 
-if(place_meeting(x, y, obj_questionmarkblock))
+if(place_meeting(x, y, obj_brick))
 {
 	hsp = 0
 	movingfromblock = true;
 	y -= .5
 }
-if(!place_meeting(x, y-1, obj_questionmarkblock) && place_meeting(x, y+1, obj_questionmarkblock) && movingfromblock)
+if(!place_meeting(x, y-1, obj_brick) && place_meeting(x, y+1, obj_brick) && movingfromblock)
 {
 	depth = obj_player.depth
 	movingfromblock = false

@@ -29,6 +29,15 @@ if(invisframes > 0)
 	visible = true
 }*/
 
+if(place_meeting(x, y + 1, obj_movingplatform))
+{
+	if(!jump_initiated)
+	{
+		is_jumping = false
+		y = instance_nearest(x,y,obj_movingplatform).y - 1
+	}
+}
+
 if(!is_dead)
 {
 if instance_exists(obj_camera) && obj_camera.timer <= 100 && !hurryup {
@@ -125,13 +134,42 @@ if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead)
 if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_meeting(x, y - 1, obj_questionmarkblock))
 {
 	var brick = instance_place(x,  y - 1, obj_brick)
-	if(!brick.jumping)
+	if(!brick.jumping && brick.sprite_index != spr_usedblock)
 	{
-		if(!big)
+		if(!big || variable_instance_exists(brick, "object"))
 		{
 			brick.jumping = true
 			//brick.mask_index = spr_null
-			audio_play_sound(bump_sound, 10, false)
+			if(variable_instance_exists(brick, "object"))
+			{
+				with(brick)
+				{
+					changetosprite = spr_usedblock
+					if(object == obj_powerup)
+					{
+						with(instance_create_layer(x + 8, y, "Instances", obj_powerup))
+						{
+							depth = other.depth + 1
+						}
+						audio_play_sound(power_up_appear, 10, false)
+					}
+					else
+					{
+						global.coins++;
+						with(instance_create_layer(x + 8, y, "Instances", obj_coineffect))
+						{
+							depth = other.depth + 1
+						}
+						audio_play_sound(coin, 10, false)
+						global.scores[global.luigi] += 200
+
+					}
+				}
+			}
+			else
+			{
+				audio_play_sound(bump_sound, 10, false)
+			}
 		}
 		else
 		{
@@ -341,7 +379,6 @@ jump_initiated = false;
 
 
 
-
 var whole = floor(abs(hsp)); // the integer part of hsp
 var fraction = abs(hsp) - whole; // the fractional part of hsp
 var dir = sign(hsp); // the direction hsp is pointing
@@ -389,7 +426,7 @@ if (place_meeting(x, y + vsp, obj_solid) && abs(vsp) > 0 && place_meeting(x + hs
 	x += hsp
 }
 
-if !(place_meeting(x, y + 16, obj_solid))
+if !(place_meeting(x, y + 1, obj_solid)) && !(place_meeting(x, y + 2, obj_movingplatform)) 
 {
     if(alarm[0] <= 0) alarm[0] = 4;
 }
