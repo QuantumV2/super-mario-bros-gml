@@ -12,6 +12,7 @@ if (!place_meeting(x + sign(hsp), y, obj_solid) || place_meeting(x + sign(hsp), 
     x += hsp
 } else {
     movdir = -movdir
+	image_xscale = -image_xscale
 }
 
 if (place_meeting(x, y + vsp, obj_solid) && !place_meeting(x + sign(hsp), y, obj_solidfollowcam)) {

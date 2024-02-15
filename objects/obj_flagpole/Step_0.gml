@@ -13,6 +13,7 @@ if(instance_exists(player))
 		with(instance_create_layer(x, plrheight, "Instances", obj_scoreparticle))
 		{
 			targety = obj_flagpole.y
+			time = 99999999 //lol
 			scorenumber = targetscore
 		}
 		scoreshown = true
