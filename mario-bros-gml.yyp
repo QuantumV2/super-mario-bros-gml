@@ -162,6 +162,7 @@
     {"id":{"name":"spr_font","path":"sprites/spr_font/spr_font.yy",},},
     {"id":{"name":"spr_brick_debris","path":"sprites/spr_brick_debris/spr_brick_debris.yy",},},
     {"id":{"name":"die_sound","path":"sounds/die_sound/die_sound.yy",},},
+    {"id":{"name":"kick","path":"sounds/kick/kick.yy",},},
     {"id":{"name":"spr_koopa_walk","path":"sprites/spr_koopa_walk/spr_koopa_walk.yy",},},
     {"id":{"name":"bump_sound","path":"sounds/bump_sound/bump_sound.yy",},},
     {"id":{"name":"stomp","path":"sounds/stomp/stomp.yy",},},

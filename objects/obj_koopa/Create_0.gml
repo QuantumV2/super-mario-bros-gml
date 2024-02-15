@@ -5,4 +5,5 @@ vsp = 0;
 grav = 0.2;
 is_jumping = true;
 dead = false
+red = false;
 mask_index = spr_goombmask

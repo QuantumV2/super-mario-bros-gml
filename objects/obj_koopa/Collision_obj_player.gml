@@ -2,7 +2,7 @@ if(other.y < y - 2 && !dead && other.is_jumping && !other.is_dead)
 {
 	audio_play_sound(stomp, 10, false)
 	sprite_index = spr_goombadead
-	instance_change(obj_shell, true)
+	instance_create_layer(x, y, "Instances", obj_shell)
 	instance_destroy(id, false)
 }
 else

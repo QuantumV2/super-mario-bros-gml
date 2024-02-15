@@ -10,6 +10,10 @@ if(!moving || (moving && other.is_jumping && !other.is_dead))
 			scorenumber = 100
 		}	
 	}
+	else
+	{
+		audio_play_sound(kick, 10, false)
+	}
 }
 else
 {

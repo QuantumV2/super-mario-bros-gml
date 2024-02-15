@@ -2,6 +2,7 @@ obj_camera.timerfrozen = false
 if((global.lives == [0,0] && global.twoplayer) || (global.lives[0] == 0 && !global.twoplayer))
 {
 	global.scores[global.luigi] = 0
+	script_execute(init)
 	game_restart()	
 }
 else

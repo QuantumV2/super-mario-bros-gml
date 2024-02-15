@@ -139,6 +139,7 @@
     {"name":"spr_font","order":36,"path":"sprites/spr_font/spr_font.yy",},
     {"name":"spr_brick_debris","order":45,"path":"sprites/spr_brick_debris/spr_brick_debris.yy",},
     {"name":"die_sound","order":12,"path":"sounds/die_sound/die_sound.yy",},
+    {"name":"kick","order":17,"path":"sounds/kick/kick.yy",},
     {"name":"spr_koopa_walk","order":82,"path":"sprites/spr_koopa_walk/spr_koopa_walk.yy",},
     {"name":"stomp","order":11,"path":"sounds/stomp/stomp.yy",},
     {"name":"obj_OLDTVFilter_Tube_Only","order":7,"path":"objects/obj_OLDTVFilter_Tube_Only/obj_OLDTVFilter_Tube_Only.yy",},

@@ -28,6 +28,12 @@ if (!place_meeting(x, y + 16, obj_solid) && !place_meeting(x, y + 16, obj_solidf
     is_jumping = true;
 }
 
+if(red && !place_meeting(x + sign(movdir), y + 4, obj_solid))
+{
+	    movdir = -movdir
+		image_xscale = -image_xscale
+}
+
 if(place_meeting(x, y+4, obj_brick))
 {
 	if(instance_place(x, y+4, obj_brick).jumping)
