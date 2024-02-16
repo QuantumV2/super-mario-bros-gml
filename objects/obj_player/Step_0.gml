@@ -1,7 +1,7 @@
 global.powerup[global.luigi] = big
 if !global.forcepaused
 {
-	if(keyboard_check_pressed(vk_enter)){
+	if(keyboard_check_pressed(vk_enter) && !frozen){
 		global.paused = !global.paused
 		if(global.paused)
 		{

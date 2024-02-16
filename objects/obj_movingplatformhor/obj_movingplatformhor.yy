@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "spr_platform",
-    "path": "sprites/spr_platform/spr_platform.yy",
+    "name": "spr_platform_4",
+    "path": "sprites/spr_platform_4/spr_platform_4.yy",
   },
   "spriteMaskId": null,
   "visible": true,
