@@ -90,15 +90,15 @@ if is_dead {
 if(movefrozen) {}
 else
 {
-	if(keyboard_check(ord("S")) && place_meeting(x, y + 1, obj_pipe) && pipe == noone)
+	if(keyboard_check(ord("S")) && place_meeting(x, y + 1, obj_pipe) && pipe == noone && !is_jumping)
 	{
-		if(!instance_place(x, y + 1, obj_pipe).vertical)
+		if(!instance_place(x, y + 1, obj_pipe).vertical && move == 0)
 		{
 		audio_play_sound(pipe_sound, 10, false)
 		pipe = instance_place(x, y + 1, obj_pipe)
 		}
 	}
-	if(abs(hsp) > 0 && place_meeting(x + hsp, y, obj_pipe) && pipe == noone)
+	if(abs(hsp) > 0 && place_meeting(x + hsp, y, obj_pipe) && pipe == noone && !is_jumping)
 	{
 		if(instance_place(x + hsp, y, obj_pipe).vertical)
 		{
@@ -191,7 +191,7 @@ if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_me
 }
 
 
-if(pipe != noone)
+if(pipe != noone && !is_jumping)
 {
 	mask_index = spr_null
 	camoffset = pipe.camoffset
@@ -199,7 +199,7 @@ if(pipe != noone)
 	ignorecollision = true
 	depth = layer_get_depth("Tiles_1") + 1
 
-	if(!pipe.vertical)
+	if(!pipe.vertical && move == 0)
 	{
 		hsp = 0
 		x = pipe.x + 16
@@ -287,10 +287,10 @@ if (is_dead) {
 	sprite_index = spr_brake
 }
 // Update is_crouching status
-var is_crouching = (keyboard_check(ord("S")) && !is_jumping) && big  && !movefrozen && !frozen;
+var is_crouching = (keyboard_check(ord("S")) && !is_jumping  && (abs(move) == 0 && !is_jumping)) && big  && !movefrozen && !frozen;
 
 // Change sprite to crouch sprite if crouching
-if (is_crouching || (keyboard_check(ord("S")) && is_jumping && big && !movefrozen && !frozen)) {
+if (is_crouching || (keyboard_check(ord("S")) && is_jumping && big && !movefrozen && !frozen )) {
 	frict = 0.2;
     sprite_index = spr_crouch;
 }
