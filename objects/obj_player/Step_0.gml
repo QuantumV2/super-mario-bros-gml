@@ -29,16 +29,16 @@ if(invisframes > 0)
 	visible = true
 }*/
 
-if (place_meeting(x, y + vsp, obj_movingplatform))
+if (place_meeting(x, y + vsp, obj_movingplatform) && !is_dead)
 {
     var inst;
     inst = instance_place(x, y + vsp, obj_movingplatform);
-    y = inst.y - (sprite_height / 2);
-	is_jumping = false
-	jump_initiated = false
+    y = inst.y - (sprite_height / 2) + 1;
+    is_jumping = false
+    jump_initiated = false
     vsp = inst.dir;
 }
-if (place_meeting(x + hsp, y + 1, obj_movingplatformhor))
+if (place_meeting(x + hsp, y + 1, obj_movingplatformhor) && !is_dead)
 {
 
     var inst = instance_place(x + hsp, y + 1, obj_movingplatformhor);
@@ -90,7 +90,7 @@ if is_dead {
 if(movefrozen) {}
 else
 {
-	if(keyboard_check(ord("S")) && place_meeting(x, y + 1, obj_pipe) && pipe == noone && !is_jumping)
+	if(keyboard_check(ord("S")) && place_meeting(x, y + 1, obj_pipe) && pipe == noone && !is_jumping && !movefrozen)
 	{
 		if(!instance_place(x, y + 1, obj_pipe).vertical && move == 0)
 		{
@@ -98,7 +98,7 @@ else
 		pipe = instance_place(x, y + 1, obj_pipe)
 		}
 	}
-	if(abs(hsp) > 0 && place_meeting(x + hsp, y, obj_pipe) && pipe == noone && !is_jumping)
+	if(abs(hsp) > 0 && place_meeting(x + hsp, y, obj_pipe) && pipe == noone && !is_jumping && !movefrozen)
 	{
 		if(instance_place(x + hsp, y, obj_pipe).vertical)
 		{
@@ -194,6 +194,7 @@ if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_me
 if(pipe != noone && !is_jumping)
 {
 	mask_index = spr_null
+	movefrozen = true
 	camoffset = pipe.camoffset
 	target_door = pipe.target_door
 	ignorecollision = true
@@ -208,6 +209,7 @@ if(pipe != noone && !is_jumping)
 			vsp = 0
 			ignorecollision = false
 			depth = 0
+			movefrozen = false
 			room_goto(pipe.target_room)
 			pipe = noone
 		}
@@ -221,7 +223,7 @@ if(pipe != noone && !is_jumping)
 		{
 			ignorecollision = false
 			depth = 0
-
+			movefrozen = false
 			room_goto(pipe.target_room)
 			pipe = noone
 		}
@@ -236,10 +238,6 @@ if(place_meeting(x, y, obj_exitpipe))
 	ignorecollision = true
 	depth = layer_get_depth("Tiles_1") + 1
 	y += -1
-	if(!audio_is_playing(pipe_sound))
-	{
-		audio_play_sound(pipe_sound, 10, false)	
-	}
 }
 else if (!place_meeting(x, y, obj_exitpipe) && pipe == noone)
 {
@@ -287,7 +285,7 @@ if (is_dead) {
 	sprite_index = spr_brake
 }
 // Update is_crouching status
-var is_crouching = (keyboard_check(ord("S")) && !is_jumping  && (abs(move) == 0 && !is_jumping)) && big  && !movefrozen && !frozen;
+var is_crouching = (keyboard_check(ord("S")) && !is_jumping) && big  && !movefrozen && !frozen;
 
 // Change sprite to crouch sprite if crouching
 if (is_crouching || (keyboard_check(ord("S")) && is_jumping && big && !movefrozen && !frozen )) {
@@ -414,20 +412,17 @@ if(!ignorecollision)
 {
 // Vertical Collision
 if (place_meeting(x, y + vsp, obj_solid)) {
-    while (!place_meeting(x, y + sign(vsp), obj_solid)) {
-        y += sign(vsp);
-    }
-	    
-	if(vsp > 0)
+	if(!place_meeting(x, y + vsp, obj_movingplatform))
 	{
-	    vsp = 0;
-	    is_jumping = false;
-	}
-	else
-	{
-		vsp = 0
-	}
+	    if (vsp != 0) {
+	        while (!place_meeting(x, y + sign(vsp), obj_solid)) {
+	            y += sign(vsp);
+	        }
+	    }
 
+	    vsp = 0;
+	    is_jumping = (vsp > 0);
+	}
 }
 }
 
@@ -436,7 +431,7 @@ if (place_meeting(x, y + vsp, obj_solid) && abs(vsp) > 0 && place_meeting(x + hs
 	x += hsp
 }
 
-if !(place_meeting(x, y + 1, obj_solid)) && !(place_meeting(x, y + 2, obj_movingplatform)) 
+if !(place_meeting(x, y + 1, obj_solid)) 
 {
     if(alarm[0] <= 0) alarm[0] = 4;
 }

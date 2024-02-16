@@ -1,12 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "obj_questionmarkblock",
+  "name": "obj_castlebridge",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,},
     {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -15,8 +13,8 @@
     "path": "folders/Objects.yy",
   },
   "parentObjectId": {
-    "name": "obj_brick",
-    "path": "objects/obj_brick/obj_brick.yy",
+    "name": "obj_solid",
+    "path": "objects/obj_solid/obj_solid.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -32,10 +30,10 @@
   "physicsShapePoints": [],
   "physicsStartAwake": true,
   "properties": [],
-  "solid": true,
+  "solid": false,
   "spriteId": {
-    "name": "spr_questionblock",
-    "path": "sprites/spr_questionblock/spr_questionblock.yy",
+    "name": "spr_castlebridge",
+    "path": "sprites/spr_castlebridge/spr_castlebridge.yy",
   },
   "spriteMaskId": null,
   "visible": true,

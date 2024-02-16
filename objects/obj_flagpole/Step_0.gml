@@ -28,7 +28,10 @@ if(instance_exists(player))
 					if !other.playershouldwalk
 					{
 						image_speed  = 0
+						if(global.level < 4)
+						{
 						other.alarm[0] = 15
+						}
 					}
 				}
 			}
@@ -62,7 +65,7 @@ if(instance_exists(player))
 					global.scores[global.luigi] = other._score + targetscore
 				}
 				if(obj_camera.timer - 1 > -1) obj_camera.timer--;
-				if(obj_camera.timer <= 0 && global.scores[global.luigi] >= other._score + targetscore)
+				if(obj_camera.timer <= 0 && global.scores[global.luigi] >= other._score + targetscore && !audio_is_playing(stage_clear))
 				{
 					if(global.level < 4) global.level++;
 					else {
