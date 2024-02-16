@@ -83,6 +83,7 @@
     {"id":{"name":"jump_sound","path":"sounds/jump_sound/jump_sound.yy",},},
     {"id":{"name":"obj_flagpole","path":"objects/obj_flagpole/obj_flagpole.yy",},},
     {"id":{"name":"spr_mushroomoneup","path":"sprites/spr_mushroomoneup/spr_mushroomoneup.yy",},},
+    {"id":{"name":"superjump_sound","path":"sounds/superjump_sound/superjump_sound.yy",},},
     {"id":{"name":"spr_doorA","path":"sprites/spr_doorA/spr_doorA.yy",},},
     {"id":{"name":"obj_pipe","path":"objects/obj_pipe/obj_pipe.yy",},},
     {"id":{"name":"spr_bigmario_crouchmask","path":"sprites/spr_bigmario_crouchmask/spr_bigmario_crouchmask.yy",},},

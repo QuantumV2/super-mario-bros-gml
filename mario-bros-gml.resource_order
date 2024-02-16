@@ -64,6 +64,7 @@
     {"name":"jump_sound","order":3,"path":"sounds/jump_sound/jump_sound.yy",},
     {"name":"obj_flagpole","order":25,"path":"objects/obj_flagpole/obj_flagpole.yy",},
     {"name":"spr_mushroomoneup","order":87,"path":"sprites/spr_mushroomoneup/spr_mushroomoneup.yy",},
+    {"name":"superjump_sound","order":19,"path":"sounds/superjump_sound/superjump_sound.yy",},
     {"name":"spr_doorA","order":54,"path":"sprites/spr_doorA/spr_doorA.yy",},
     {"name":"obj_pipe","order":17,"path":"objects/obj_pipe/obj_pipe.yy",},
     {"name":"spr_bigmario_crouchmask","order":52,"path":"sprites/spr_bigmario_crouchmask/spr_bigmario_crouchmask.yy",},
