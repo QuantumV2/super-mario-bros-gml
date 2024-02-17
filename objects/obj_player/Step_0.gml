@@ -257,7 +257,7 @@ move = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 //hsp = move * (keyboard_check(vk_shift) ? run_speed : walk_speed);
 
 // Flip sprite based on movement direction
-if (move != 0) image_xscale = move;
+if (move != 0) image_xscale =  move;
 
 move_speed = (keyboard_check(vk_shift) ? run_speed : walk_speed)
 
@@ -267,10 +267,7 @@ move_speed = (keyboard_check(vk_shift) ? run_speed : walk_speed)
 	image_speed = 1
 }*/
 
-if(!frozen)
-{
-image_speed = abs(hsp * move_speed) / 3.5
-}
+
 
 // Change sprites based on actions
 if (is_dead) {
@@ -414,14 +411,18 @@ if(!ignorecollision)
 if (place_meeting(x, y + vsp, obj_solid)) {
 	if(!place_meeting(x, y + vsp, obj_movingplatform))
 	{
-	    if (vsp != 0) {
-	        while (!place_meeting(x, y + sign(vsp), obj_solid)) {
-	            y += sign(vsp);
-	        }
+		while (!place_meeting(x, y + sign(vsp), obj_solid)) {
+		    y += sign(vsp);
+		}
+		if(vsp > 0)
+	    {
+	        vsp = 0;
+	        is_jumping = false;
 	    }
-
-	    vsp = 0;
-	    is_jumping = (vsp > 0);
+	    else
+	    {
+	        vsp = grav
+	    }
 	}
 }
 }
@@ -455,4 +456,9 @@ if(string_ends_with(room_get_name(room), "_cutscene"))
 		}
 
 	}
+}
+
+if(!frozen)
+{
+image_speed = abs(hsp * move_speed) / 3.5
 }
