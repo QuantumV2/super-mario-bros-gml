@@ -6,7 +6,7 @@ if(instance_exists(player))
 	player.hsp = 1.8
 	with(player)
 	{
-		if(place_meeting(x+1, y - 8, obj_solid)){
+		if(place_meeting(x+1, y, obj_solid)){
 			sprite_index  = spr_idle
 			global.paused = true
 			global.forcepaused = true
