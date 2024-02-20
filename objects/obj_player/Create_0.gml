@@ -8,6 +8,7 @@ run_speed = 2.8;
 move_speed = 0;
 grav = 0.12;
 jump_speed = -4;
+jumpbuf = 0;
 
 move = 0;
 

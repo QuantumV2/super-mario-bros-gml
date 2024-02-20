@@ -90,7 +90,7 @@ if is_dead {
 if(movefrozen) {}
 else
 {
-	if(keyboard_check(ord("S")) && place_meeting(x, y + 1, obj_pipe) && pipe == noone && !is_jumping && !movefrozen)
+	if(keyboard_check(vk_down) && place_meeting(x, y + 1, obj_pipe) && pipe == noone && !is_jumping && !movefrozen)
 	{
 		if(!instance_place(x, y + 1, obj_pipe).vertical && move == 0)
 		{
@@ -247,19 +247,19 @@ else if (!place_meeting(x, y, obj_exitpipe) && pipe == noone)
 
 if(!movefrozen) {
 // Get player input
-move = keyboard_check(ord("D")) - keyboard_check(ord("A"));
+move = -(keyboard_check(vk_left) - keyboard_check(vk_right));
 
 } else {
 	move = 0
 }
 
 // Set horizontal speed
-//hsp = move * (keyboard_check(vk_shift) ? run_speed : walk_speed);
+//hsp = move * (keyboard_check(ord("Z")) ? run_speed : walk_speed);
 
 // Flip sprite based on movement direction
 if (move != 0) image_xscale =  move;
 
-move_speed = (keyboard_check(vk_shift) ? run_speed : walk_speed)
+move_speed = (keyboard_check(ord("Z")) ? run_speed : walk_speed)
 
 /*if(move_speed > walk_speed && sprite_index == spr_walk){
 	image_speed = 1.5
@@ -282,10 +282,10 @@ if (is_dead) {
 	sprite_index = spr_brake
 }
 // Update is_crouching status
-var is_crouching = (keyboard_check(ord("S")) && !is_jumping) && big  && !movefrozen && !frozen;
+var is_crouching = (keyboard_check(vk_down) && !is_jumping) && big  && !movefrozen && !frozen;
 
 // Change sprite to crouch sprite if crouching
-if (is_crouching || (keyboard_check(ord("S")) && is_jumping && big && !movefrozen && !frozen )) {
+if (is_crouching || (keyboard_check(vk_down) && is_jumping && big && !movefrozen && !frozen )) {
 	frict = 0.2;
     sprite_index = spr_crouch;
 }
@@ -313,17 +313,27 @@ if (!is_crouching && move != 0) {
 
 if(sprite_index == spr_jump && !is_jumping) { sprite_index = spr_walk; }
 
+
+
+if (keyboard_check_pressed(ord("X")) && (is_jumping) && jumpbuf <= 0 )
+{
+	if(place_meeting(x, y + 15, obj_solid)){
+		jumpbuf = 5
+	}
+}
+
+jumpbuf = (jumpbuf - 1 < 0) ? 0 : jumpbuf - 1
 // Jumping logic
 if(movefrozen) {}
 else
 {
-	if (keyboard_check_pressed(vk_space) && !is_jumping) {
+	if (keyboard_check_pressed(ord("X")) && (!is_jumping) || (!is_jumping && jumpbuf > 0)) {
 	    is_jumping = true;
 	    jump_initiated = true;
 	    vsp = jump_speed;
 	    is_crouching = false; // Reset crouching when jumping
 	    var snd = big ? audio_play_sound(superjump_sound, 10, false) : audio_play_sound(jump_sound, 10, false)
-	} else if (keyboard_check_released(vk_space) && is_jumping) {
+	} else if (keyboard_check_released(ord("X")) && is_jumping) {
 	    if (sign(vsp) == -1) vsp /= 2;
 	}
 }

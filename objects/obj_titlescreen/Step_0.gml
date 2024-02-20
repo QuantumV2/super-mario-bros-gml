@@ -1,12 +1,12 @@
-if(keyboard_check_pressed(vk_enter)){
+if(keyboard_check_pressed(ord("X"))){
 	if(choice == 1) global.twoplayer = true;
 	room_goto(transition)	
 }
-if(keyboard_check_pressed(ord("W")))
+if(keyboard_check_pressed(vk_up))
 {
 	choice--;	
 }
-if(keyboard_check_pressed(ord("S")))
+if(keyboard_check_pressed(vk_down))
 {
 	choice++;	
 }
