@@ -4,7 +4,7 @@ if(instance_number(object_index) > 1) instance_destroy();
 // Speeds
 hurryup = 0
 walk_speed = 1.4;
-run_speed = 3.2;
+run_speed = 3.1;
 move_speed = 0;
 grav = 0.18;
 jump_speed = -5;

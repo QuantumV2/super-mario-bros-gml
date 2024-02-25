@@ -24,6 +24,7 @@ if (!place_meeting(x, y + 1, obj_solid)) {
 
 if (place_meeting(x, y + 1, obj_solid)) {
 	vsp = 0;
+	y -= 1
 	is_jumping = false;
 }
 
