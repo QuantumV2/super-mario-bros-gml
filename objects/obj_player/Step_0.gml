@@ -98,11 +98,12 @@ else
 		pipe = instance_place(x, y + 1, obj_pipe)
 		}
 	}
-	if(abs(hsp) > 0 && place_meeting(x + sign(hsp), y, obj_pipe) && pipe == noone && !is_jumping && !movefrozen)
+	if(abs(hsp) > 0 && place_meeting(x + sign(hsp), y, obj_pipe) && keyboard_check_pressed(horbuttonind[sign(hsp) + 1]) && pipe == noone && keyboard_check_pressed(horbuttonind[sign(hsp) + 1]) && !is_jumping && !movefrozen)
 	{
 		if(instance_place(x + sign(hsp), y, obj_pipe).vertical)
 		{
 		audio_play_sound(pipe_sound, 10, false)
+		image_xscale = sign(hsp)
 		pipe = instance_place(x + sign(hsp), y, obj_pipe)
 		}
 	}
@@ -190,6 +191,10 @@ if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_me
 	}
 }
 
+if(airstreak > 0 && !is_jumping)
+{
+	airstreak = 0;	
+}
 
 if(pipe != noone && !is_jumping)
 {
@@ -330,7 +335,7 @@ else
 	if (keyboard_check_pressed(ord("X")) && (!is_jumping) || (!is_jumping && jumpbuf > 0)) {
 	    is_jumping = true;
 	    jump_initiated = true;
-	    vsp = jump_speed;
+	    vsp = jump_speed - abs(hsp) / 7;
 	    is_crouching = false; // Reset crouching when jumping
 	    var snd = big ? audio_play_sound(superjump_sound, 10, false) : audio_play_sound(jump_sound, 10, false)
 	} else if (keyboard_check_released(ord("X")) && is_jumping) {
@@ -345,7 +350,7 @@ if(vsp > .2 && !is_dead)
 
 // Update vspeed with gravity
 
-if (is_jumping && vsp < (grav * 6)) vsp += grav;
+if (is_jumping && vsp < (grav * 6) && !ignorecollision) vsp += grav;
 
 
 if(move_speed == run_speed && abs(hsp) >= walk_speed)
@@ -431,7 +436,7 @@ if (place_meeting(x, y + vsp, obj_solid)) {
 	    }
 	    else
 	    {
-	        vsp = grav
+	        vsp = 0
 	    }
 	}
 }

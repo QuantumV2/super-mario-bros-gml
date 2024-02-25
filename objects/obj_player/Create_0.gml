@@ -3,11 +3,11 @@ depth = -9999
 if(instance_number(object_index) > 1) instance_destroy(); 
 // Speeds
 hurryup = 0
-walk_speed = 1.7;
-run_speed = 2.8;
+walk_speed = 1.4;
+run_speed = 3.2;
 move_speed = 0;
-grav = 0.12;
-jump_speed = -4;
+grav = 0.18;
+jump_speed = -5;
 jumpbuf = 0;
 
 move = 0;
@@ -18,6 +18,11 @@ camoffset = 0;
 is_jumping = true;
 jump_initiated = false;
 is_dead = false;
+
+horbuttonind = [vk_left, undefined, vk_right]
+
+airstreak = 0;
+airstreakpoints = [100, 200, 400, 500, 800, 1000, 2000, 4000, 5000, 8000, -1]
 
 // Sprites
 spr_idle = spr_mario_idle;
@@ -46,6 +51,8 @@ pipe = noone
 ignorecollision = false
 
 invisframes = 0;
+
+uninterruptedmewingstreak = 0;
 
 mask_index = spr_mario_mask
 

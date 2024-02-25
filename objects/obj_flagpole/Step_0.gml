@@ -1,12 +1,7 @@
 if(instance_exists(player))
 {
 	obj_flag.y = approach(obj_flag.y, (y + (image_yscale * 16)) - 8, 2);
-	var targetscore = 0
-	if(other.plrheight > 196) targetscore = 100
-	if(other.plrheight < 196) targetscore = 400
-	if(other.plrheight < 128) targetscore = 800
-	if(other.plrheight < 96) targetscore = 2000
-	if(other.plrheight < 64) targetscore = 5000
+
 
 	if(!instance_exists(obj_scoreparticle) && !scoreshown)
 	{
@@ -14,7 +9,7 @@ if(instance_exists(player))
 		{
 			targety = obj_flagpole.y
 			time = 99999999 //lol
-			scorenumber = targetscore
+			scorenumber = obj_flagpole.targetscoreNOTIMER
 		}
 		scoreshown = true
 	}
@@ -30,7 +25,7 @@ if(instance_exists(player))
 						image_speed  = 0
 						image_xscale = -1
 						obj_player.x += 8
-						other.alarm[0] = 15
+						other.alarm[0] = 20
 					}
 				}
 			}
@@ -55,16 +50,16 @@ if(instance_exists(player))
 				global.paused = true
 				global.forcepaused = true
 
-				if(global.scores[global.luigi] < other._score + targetscore)
+				if(global.scores[global.luigi] < other._score + other.targetscore)
 				{
-					global.scores[global.luigi] += 10;	
+					global.scores[global.luigi] += 30;	
 				}
-				if(global.scores[global.luigi] > other._score + targetscore)
+				if(global.scores[global.luigi] > other._score + other.targetscore)
 				{
-					global.scores[global.luigi] = other._score + targetscore
+					global.scores[global.luigi] = other._score + other.targetscore
 				}
 				if(obj_camera.timer - 1 > -1) obj_camera.timer--;
-				if(obj_camera.timer <= 0 && global.scores[global.luigi] >= other._score + targetscore && !audio_is_playing(stage_clear))
+				if(obj_camera.timer <= 0 && global.scores[global.luigi] >= other._score + other.targetscore && !audio_is_playing(stage_clear))
 				{
 					if(global.level < 4) global.level++;
 					else {

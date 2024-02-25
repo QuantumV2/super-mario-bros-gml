@@ -11,3 +11,11 @@ player = other.id
 _score = global.scores[global.luigi]
 audio_stop_all()
 audio_play_sound(flagpole_sound, 10, false)
+
+if(plrheight > 196) targetscore = 100
+if(plrheight < 196) targetscore = 400
+if(plrheight < 128) targetscore = 800
+if(plrheight < 96) targetscore = 2000
+if(plrheight < 64) targetscore = 5000
+targetscoreNOTIMER = targetscore
+targetscore += obj_camera.timer * 50

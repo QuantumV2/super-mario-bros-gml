@@ -1,8 +1,4 @@
-global.scores[global.luigi] += 100
-with(instance_create_layer(x, y - 8, "Instances", obj_scoreparticle))
-{
-	scorenumber = 100
-}
+scr_enemystomp()
 with(instance_create_layer(x, y, "Instances", obj_debris))
 {
 	image_speed = 0

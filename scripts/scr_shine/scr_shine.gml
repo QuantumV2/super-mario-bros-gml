@@ -13,7 +13,7 @@ switch(palselect)
 	break
 
 }
-if(array_contains(global.undergroundlevels, room))
+if(array_contains(global.undergroundlevels, room) && sprite_index != spr_usedblockunderground)
 {
 	palarray[2][1] = [0, 123, 140]
 }
