@@ -92,18 +92,18 @@ else
 {
 	if(keyboard_check(vk_down) && place_meeting(x, y + 1, obj_pipe) && pipe == noone && !is_jumping && !movefrozen)
 	{
-		if(!instance_place(x, y + 1, obj_pipe).vertical && move == 0)
+		if(!instance_place(x, y + 1, obj_pipe).vertical && hsp == 0)
 		{
 		audio_play_sound(pipe_sound, 10, false)
 		pipe = instance_place(x, y + 1, obj_pipe)
 		}
 	}
-	if(abs(hsp) > 0 && place_meeting(x + hsp, y, obj_pipe) && pipe == noone && !is_jumping && !movefrozen)
+	if(abs(hsp) > 0 && place_meeting(x + sign(hsp), y, obj_pipe) && pipe == noone && !is_jumping && !movefrozen)
 	{
-		if(instance_place(x + hsp, y, obj_pipe).vertical)
+		if(instance_place(x + sign(hsp), y, obj_pipe).vertical)
 		{
 		audio_play_sound(pipe_sound, 10, false)
-		pipe = instance_place(x + hsp, y, obj_pipe)
+		pipe = instance_place(x + sign(hsp), y, obj_pipe)
 		}
 	}
 }

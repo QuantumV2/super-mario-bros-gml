@@ -28,10 +28,9 @@ if(instance_exists(player))
 					if !other.playershouldwalk
 					{
 						image_speed  = 0
-						if(global.level < 4)
-						{
+						image_xscale = -1
+						obj_player.x += 8
 						other.alarm[0] = 15
-						}
 					}
 				}
 			}

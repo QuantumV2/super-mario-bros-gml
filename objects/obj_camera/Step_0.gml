@@ -15,12 +15,5 @@ if timer <= 0 && !timerfrozen
 }
 if instance_number(obj_camera) > 1 { instance_destroy() } //prevent multiple cameras spawning
 
-if(room != transition)
-{
-	scr_shine(1)
-}
-else
-{
-	palselect = 0	
-	palarray = [ [ [ 230,156,33 ],[ 230,156,33 ] ],[ [ 230,156,33 ],[ 230,156,33 ] ],[ [ 230,156,33 ],[ 230,156,33 ] ] ] 
-}
+scr_shine(1)
+
