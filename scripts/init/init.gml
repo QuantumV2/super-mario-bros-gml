@@ -7,10 +7,10 @@ display_set_gui_size(SCREENWIDTH, SCREENHEIGHT);
 #macro SCREENWIDTH 256
 #macro SCREENHEIGHT 240
 global.world = 1
-global.level = 1
+global.level = 2
 global.lives = [3, 3]
 global.coins = 0
-global.cutscene = 0
+global.cutscene = 1
 global.undergroundlevels = [transition, mario_1_1_subarea, mario_1_2, mario_1_2_subarea]
 global.powerup = [0,0]
 global.twoplayer = false

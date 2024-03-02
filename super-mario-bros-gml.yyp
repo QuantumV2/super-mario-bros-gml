@@ -29,7 +29,9 @@
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Tile Sets","folderPath":"folders/Tile Sets.yy",},
     {"resourceType":"GMFolder","resourceVersion":"1.0","name":"Timelines","folderPath":"folders/Timelines.yy",},
   ],
-  "IncludedFiles": [],
+  "IncludedFiles": [
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"smb.nes","CopyToMask":-1,"filePath":"datafiles",},
+  ],
   "isEcma": false,
   "LibraryEmitters": [],
   "MetaData": {
@@ -169,6 +171,7 @@
     {"id":{"name":"spr_bigmario_turn","path":"sprites/spr_bigmario_turn/spr_bigmario_turn.yy",},},
     {"id":{"name":"mario_1_2_subarea","path":"rooms/mario_1_2_subarea/mario_1_2_subarea.yy",},},
     {"id":{"name":"spr_topbar","path":"sprites/spr_topbar/spr_topbar.yy",},},
+    {"id":{"name":"scr_antipiracy","path":"scripts/scr_antipiracy/scr_antipiracy.yy",},},
     {"id":{"name":"mario_1_2","path":"rooms/mario_1_2/mario_1_2.yy",},},
     {"id":{"name":"obj_shell","path":"objects/obj_shell/obj_shell.yy",},},
     {"id":{"name":"spr_mario_turn","path":"sprites/spr_mario_turn/spr_mario_turn.yy",},},

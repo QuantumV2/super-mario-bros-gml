@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_enemystomp(){
-	if(obj_player.airstreak < 10)
+	if(obj_player.airstreak < 11)
 	{
 	obj_player.airstreak++
 	}

@@ -1,7 +1,7 @@
-moving = false
+moving = false;
 hsp = 0
 movdir = -1
-spd = .5;
+spd = 2;
 vsp = 0;
 grav = 0.2;
 is_jumping = false;

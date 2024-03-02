@@ -1,8 +1,8 @@
-if(!moving || (moving && other.is_jumping && !other.is_dead))
+if(!moving || (moving && other.is_jumping && !other.is_dead && !other.frozen && !other.movefrozen))
 {
 	moving = !moving
 	x += image_xscale * 2
-	hsp = (moving) ? ((other.x <= x) ? 2 : -2) : 0
+	hsp = (moving) ? ((other.x <= x) ? -2 : 2) : 0
 	if(!moving)
 	{
 		scr_enemystomp()
