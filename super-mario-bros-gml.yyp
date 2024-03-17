@@ -29,7 +29,9 @@
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"Place your smb.nes file here","CopyToMask":-1,"filePath":"datafiles","name":"Place your smb.nes file here","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"smb.nes","CopyToMask":-1,"filePath":"datafiles","name":"smb.nes","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"smb.nes.bak","CopyToMask":-1,"filePath":"datafiles","name":"smb.nes.bak","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],

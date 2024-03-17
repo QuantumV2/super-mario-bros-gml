@@ -98,7 +98,7 @@ else
 		pipe = instance_place(x, y + 1, obj_pipe)
 		}
 	}
-	if(abs(hsp) > 0 && place_meeting(x + sign(hsp), y, obj_pipe) && keyboard_check_pressed(horbuttonind[sign(hsp) + 1]) && pipe == noone && keyboard_check_pressed(horbuttonind[sign(hsp) + 1]) && !is_jumping && !movefrozen)
+	if(abs(hsp) > 0 && place_meeting(x + sign(hsp), y, obj_pipe) && keyboard_check(horbuttonind[sign(hsp) + 1]) && pipe == noone && keyboard_check_pressed(horbuttonind[sign(hsp) + 1]) && !is_jumping && !movefrozen)
 	{
 		if(instance_place(x + sign(hsp), y, obj_pipe).vertical)
 		{
