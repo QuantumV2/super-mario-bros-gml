@@ -3,5 +3,6 @@
   "ResourceOrderSettings":[
     {"name":"scr_antipiracy","order":2,"path":"scripts/scr_antipiracy/scr_antipiracy.yy",},
     {"name":"scr_enemystomp","order":1,"path":"scripts/scr_enemystomp/scr_enemystomp.yy",},
+    {"name":"scr_enemydie","order":3,"path":"scripts/scr_enemydie/scr_enemydie.yy",},
   ],
 }

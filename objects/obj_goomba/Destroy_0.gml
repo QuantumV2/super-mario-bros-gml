@@ -1,11 +1,4 @@
 scr_enemystomp()
-with(instance_create_layer(x, y, "Instances", obj_debris))
-{
-	image_speed = 0
-	sprite_index = spr_goomba	
-	image_yscale = -1
-	grav = .1;
-	vsp = -1;
-}
+scr_enemydie()
 
 
