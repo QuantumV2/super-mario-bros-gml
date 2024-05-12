@@ -35,7 +35,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.2.0.132",
+    "IDEVersion":"2024.4.0.137",
   },
   "name":"super-mario-bros-gml",
   "resources":[
@@ -92,6 +92,7 @@
     {"id":{"name":"print","path":"scripts/print/print.yy",},},
     {"id":{"name":"scr_antipiracy","path":"scripts/scr_antipiracy/scr_antipiracy.yy",},},
     {"id":{"name":"scr_drawgui","path":"scripts/scr_drawgui/scr_drawgui.yy",},},
+    {"id":{"name":"scr_enemydie","path":"scripts/scr_enemydie/scr_enemydie.yy",},},
     {"id":{"name":"scr_enemystomp","path":"scripts/scr_enemystomp/scr_enemystomp.yy",},},
     {"id":{"name":"scr_genpalette","path":"scripts/scr_genpalette/scr_genpalette.yy",},},
     {"id":{"name":"scr_OLDTVFilter_Draw","path":"scripts/scr_OLDTVFilter_Draw/scr_OLDTVFilter_Draw.yy",},},
@@ -104,7 +105,6 @@
     {"id":{"name":"scr_paltoarr","path":"scripts/scr_paltoarr/scr_paltoarr.yy",},},
     {"id":{"name":"scr_player_get_hurt","path":"scripts/scr_player_get_hurt/scr_player_get_hurt.yy",},},
     {"id":{"name":"scr_shine","path":"scripts/scr_shine/scr_shine.yy",},},
-    {"id":{"name":"scr_enemydie","path":"scripts/scr_enemydie/scr_enemydie.yy",},},
     {"id":{"name":"sprite_get_pixel","path":"scripts/sprite_get_pixel/sprite_get_pixel.yy",},},
     {"id":{"name":"shd_pal","path":"shaders/shd_pal/shd_pal.yy",},},
     {"id":{"name":"break_block","path":"sounds/break_block/break_block.yy",},},

@@ -1,3 +1,4 @@
+if(global.paused) exit;
 for (var i = 0; i < firebar_length; i++) {
     var angle = image_angle;
     var total_distance = fireball_distance + spacing * i;  // calculate total distance for each fireball

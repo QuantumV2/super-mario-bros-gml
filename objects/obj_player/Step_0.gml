@@ -83,7 +83,7 @@ if is_dead {
 		global.powerup[global.luigi] = 0
 		
 		instance_destroy()
-		room_goto(transition)
+		//room_goto(transition)
     }
 	exit
 }
