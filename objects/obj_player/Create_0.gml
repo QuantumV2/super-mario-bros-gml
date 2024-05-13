@@ -1,6 +1,6 @@
 depth = -9999
 
-//if(instance_number(object_index) > 1) instance_destroy(); 
+if(instance_number(object_index) > 1) instance_destroy(); 
 // Speeds
 hurryup = 0
 walk_speed = 1.4;

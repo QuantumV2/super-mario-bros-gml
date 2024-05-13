@@ -7,7 +7,7 @@ display_set_gui_size(SCREENWIDTH, SCREENHEIGHT);
 #macro SCREENWIDTH 256
 #macro SCREENHEIGHT 240
 global.world = 1
-global.level = 4
+global.level = 1
 global.lives = [3, 3]
 global.coins = 0
 global.cutscene = 0
