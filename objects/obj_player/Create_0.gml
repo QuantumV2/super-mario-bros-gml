@@ -13,6 +13,7 @@ jumpbuf = 0;
 move = 0;
 
 camoffset = 0;
+drawtxt = false;
 
 // States
 is_jumping = true;

@@ -135,6 +135,7 @@
     {"id":{"name":"onedashthreeref","path":"sprites/onedashthreeref/onedashthreeref.yy",},},
     {"id":{"name":"onedashtworef","path":"sprites/onedashtworef/onedashtworef.yy",},},
     {"id":{"name":"spr_axe","path":"sprites/spr_axe/spr_axe.yy",},},
+    {"id":{"name":"spr_axemask","path":"sprites/spr_axemask/spr_axemask.yy",},},
     {"id":{"name":"spr_bigmario_climb","path":"sprites/spr_bigmario_climb/spr_bigmario_climb.yy",},},
     {"id":{"name":"spr_bigmario_crouch","path":"sprites/spr_bigmario_crouch/spr_bigmario_crouch.yy",},},
     {"id":{"name":"spr_bigmario_crouchmask","path":"sprites/spr_bigmario_crouchmask/spr_bigmario_crouchmask.yy",},},
