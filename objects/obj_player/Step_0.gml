@@ -1,4 +1,5 @@
-global.powerup[global.luigi] = big
+scr_playerpal()
+global.powerup[global.luigi] = [big, powerup]
 if !global.forcepaused
 {
 	if(keyboard_check_pressed(vk_enter) && !frozen){
@@ -23,11 +24,11 @@ if(invisframes > 0)
 {
 	is_dead = false
 	invisframes--;
-	//visible = irandom_range(0, 1)
+	visible = !visible
 }
-/*if !visible && invisframes <= 0 { 
+if !visible && invisframes <= 0 { 
 	visible = true
-}*/
+}
 
 if (place_meeting(x, y + vsp, obj_movingplatform) && !is_dead)
 {
@@ -80,7 +81,7 @@ if is_dead {
 		
         global.lives[global.luigi] = clamp(global.lives[global.luigi] - 1, 0, global.lives[global.luigi])
 		if(global.twoplayer && global.lives[!global.luigi] > 0) { global.luigi = !global.luigi; }
-		global.powerup[global.luigi] = 0
+		global.powerup[global.luigi] = [0, 0]
 		
 		instance_destroy()
 		room_goto(transition)
@@ -262,7 +263,13 @@ move = -(keyboard_check(vk_left) - keyboard_check(vk_right));
 } else {
 	move = 0
 }
-
+if(powerup == 1 && keyboard_check_pressed(ord("Z")) && big && instance_number(obj_fireballthrown) < 2 && !movefrozen && !frozen)
+{
+instance_create_layer(x, y, "Instances", obj_fireballthrown)
+throwfire = true
+audio_play_sound(fireball, 10, 0)
+alarm[2] = 10
+}
 // Set horizontal speed
 //hsp = move * (keyboard_check(ord("Z")) ? run_speed : walk_speed);
 

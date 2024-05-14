@@ -1,3 +1,6 @@
+if(place_meeting(x, y - 8, obj_enemyparent)){
+	instance_destroy(instance_place(x, y - 8, obj_enemyparent))	
+}
 for(var i = -2; i < 3; i++)
 {
 	if(i != 0)

@@ -12,6 +12,6 @@ global.lives = [3, 3]
 global.coins = 0
 global.cutscene = 0
 global.undergroundlevels = [transition, mario_1_1_subarea, mario_1_2, mario_1_2_subarea]
-global.powerup = [0,0]
+global.powerup = [[0,0],[0,0]]
 global.twoplayer = false
 global.scores = [0, 0]
