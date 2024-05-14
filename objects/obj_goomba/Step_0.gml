@@ -8,7 +8,7 @@ hsp = spd * movdir
 if (is_jumping) vsp += grav
 
 
-if (!place_meeting(x + sign(hsp), y, obj_solid) || place_meeting(x + sign(hsp), y, obj_solidfollowcam)) {
+if ((!place_meeting(x + sign(hsp), y, obj_solid) || place_meeting(x + sign(hsp), y, obj_solidfollowcam)) && !place_meeting(x + sign(hsp), y, obj_enemyparent)) {
     x += hsp
 } else {
     movdir = -movdir

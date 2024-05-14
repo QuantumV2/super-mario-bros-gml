@@ -17,6 +17,7 @@ drawtxt = false;
 
 // States
 is_jumping = true;
+is_crouching = false;
 jump_initiated = false;
 is_dead = false;
 

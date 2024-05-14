@@ -1,8 +1,8 @@
 {
   "FolderOrderSettings":[
     {"name":"Enemies","order":3,"path":"folders/Objects/Enemies.yy",},
-    {"name":"Power-Ups","order":4,"path":"folders/Objects/Power-Ups.yy",},
     {"name":"Level Objects","order":2,"path":"folders/Objects/Level Objects.yy",},
+    {"name":"Power-Ups","order":4,"path":"folders/Objects/Power-Ups.yy",},
     {"name":"System","order":1,"path":"folders/Objects/System.yy",},
     {"name":"Backgrounds","order":10,"path":"folders/Sprites/Backgrounds.yy",},
     {"name":"Debug","order":5,"path":"folders/Sprites/Debug.yy",},

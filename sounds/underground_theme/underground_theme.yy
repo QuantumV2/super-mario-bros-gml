@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":30.0,
+  "duration":123.9,
   "name":"underground_theme",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"underground_theme.oga",
+  "soundFile":"underground_theme.wav",
   "type":0,
   "volume":1.0,
 }

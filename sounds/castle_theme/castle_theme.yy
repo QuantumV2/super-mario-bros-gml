@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":17.658775,
+  "duration":100.32,
   "name":"castle_theme",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"castle_theme.mp3",
+  "soundFile":"castle_theme.wav",
   "type":0,
   "volume":1.0,
 }
