@@ -59,7 +59,7 @@ mask_index = spr_mario_mask
 
 if(global.music == -1)
 {
-global.music = audio_play_sound(overworld_theme, 1000, true)
+	global.music = audio_play_sound(overworld_theme, 1000, true)
 }
 big = false
 

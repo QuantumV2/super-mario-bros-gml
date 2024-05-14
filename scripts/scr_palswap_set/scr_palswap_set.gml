@@ -1,5 +1,6 @@
 function scr_palswap_set(_array){
 shader_set(shd_pal)
+// why is this trycaught?
 try
 {
 

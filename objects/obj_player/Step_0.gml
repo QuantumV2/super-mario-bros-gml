@@ -50,14 +50,14 @@ if (place_meeting(x + hsp, y + 1, obj_movingplatformhor) && !is_dead)
 
 if(!is_dead)
 {
-if instance_exists(obj_camera) && obj_camera.timer <= 100 && !hurryup {
-	hurryup = 1
-	audio_play_sound(hurry_up, 1000, false)
-	audio_pause_sound(global.music)
-} else if hurryup && !audio_is_playing(hurry_up) {
+	if instance_exists(obj_camera) && obj_camera.timer <= 100 && !hurryup {
+		hurryup = 1
+		audio_play_sound(hurry_up, 1000, false)
+		audio_pause_sound(global.music)
+	} else if hurryup && !audio_is_playing(hurry_up) {
 		audio_resume_sound(global.music)
 		audio_sound_pitch(global.music, 1.5)
-}
+	}
 }
 if y > room_height && !is_dead && pipe == noone
 	is_dead = true
@@ -253,7 +253,6 @@ else if (!place_meeting(x, y, obj_exitpipe) && pipe == noone)
 if(!movefrozen) {
 // Get player input
 move = -(keyboard_check(vk_left) - keyboard_check(vk_right));
-
 } else {
 	move = 0
 }
@@ -357,37 +356,36 @@ else
 
 if(!is_dead)
 {
-if(big)
-{
-	frict = .03;
-	if(sprite_index != spr_crouch)
+	if(big)
 	{
-		mask_index = spr_bigmario_mask;
+		frict = .03;
+		if(sprite_index != spr_crouch)
+		{
+			mask_index = spr_bigmario_mask;
+		}
+		else
+		{
+			mask_index = spr_bigmario_crouchmask	
+		}
+		spr_idle = spr_bigmario_idle;
+		spr_walk = spr_bigmario_run;
+		spr_jump = spr_bigmario_jump;
+		spr_brake = spr_bigmario_turn;	
 	}
 	else
 	{
-		
-		mask_index = spr_bigmario_crouchmask	
+		frict = .06;
+		mask_index = spr_mario_mask;
+		spr_idle = spr_mario_idle;
+		spr_walk = spr_mario_run;
+		spr_jump = spr_mario_jump;
+		spr_dead = spr_mario_die;
+		spr_brake = spr_mario_turn;
 	}
-	spr_idle = spr_bigmario_idle;
-	spr_walk = spr_bigmario_run;
-	spr_jump = spr_bigmario_jump;
-	spr_brake = spr_bigmario_turn;	
-}
-else
-{
-	frict = .06;
-	mask_index = spr_mario_mask;
-	spr_idle = spr_mario_idle;
-	spr_walk = spr_mario_run;
-	spr_jump = spr_mario_jump;
-	spr_dead = spr_mario_die;
-	spr_brake = spr_mario_turn;
-}
 }
 
 if (vsp > 0 && place_meeting(x, y + vsp, obj_solid)) {
-jump_initiated = false;
+	jump_initiated = false;
 }
 
 

@@ -1,3 +1,4 @@
+// TODO: spritefont maybe?
 switch(scorenumber)
 {
 	case 100:

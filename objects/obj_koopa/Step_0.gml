@@ -2,7 +2,7 @@ if(dead) exit;
 if(global.paused) exit;
 if(scr_onscreen())
 {
-hsp = spd * movdir
+	hsp = spd * movdir
 }
 
 if (is_jumping) vsp += grav
@@ -30,8 +30,8 @@ if (!place_meeting(x, y + 16, obj_solid) && !place_meeting(x, y + 16, obj_solidf
 
 if(red && !place_meeting(x + sign(movdir), y + 4, obj_solid))
 {
-	    movdir = -movdir
-		image_xscale = -image_xscale
+	movdir = -movdir
+	image_xscale = -image_xscale
 }
 
 if(place_meeting(x, y+4, obj_brick))
