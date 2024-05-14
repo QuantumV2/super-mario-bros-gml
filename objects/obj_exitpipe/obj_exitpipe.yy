@@ -8,8 +8,8 @@
   "name":"obj_exitpipe",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"System",
+    "path":"folders/Objects/System.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

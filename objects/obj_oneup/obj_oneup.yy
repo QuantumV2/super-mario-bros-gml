@@ -9,8 +9,8 @@
   "name":"obj_oneup",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Power-Ups",
+    "path":"folders/Objects/Power-Ups.yy",
   },
   "parentObjectId":{
     "name":"obj_powerup",

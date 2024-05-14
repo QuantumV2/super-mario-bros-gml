@@ -26,8 +26,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"Collision Masks",
+    "path":"folders/Sprites/Player/Collision Masks.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

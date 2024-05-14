@@ -266,13 +266,6 @@ if (move != 0) image_xscale =  move;
 
 move_speed = (keyboard_check(ord("Z")) ? run_speed : walk_speed)
 
-/*if(move_speed > walk_speed && sprite_index == spr_walk){
-	image_speed = 1.5
-} else {
-	image_speed = 1
-}*/
-
-
 
 // Change sprites based on actions
 if (is_dead) {
@@ -303,7 +296,7 @@ else
 if (!is_crouching && move != 0) {
     hsp = lerp(hsp, move * move_speed, accel);
 } else if (is_crouching) {
-    hsp = lerp(hsp, 0, frict); // Stop movement immediately when crouching
+    hsp = lerp(hsp, 0, frict);
 } else {
     // Apply friction when not moving
     if (hsp > 0 && move == 0) {

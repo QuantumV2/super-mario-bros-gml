@@ -11,8 +11,8 @@
   "name":"obj_brick",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Level Objects",
+    "path":"folders/Objects/Level Objects.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",
