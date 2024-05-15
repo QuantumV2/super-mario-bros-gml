@@ -40,7 +40,7 @@ hsp = 0;
 vsp = 0;
 
 frict = .06;
-accel = .04;
+accel = .012;
 
 frozen = false;
 movefrozen = false;

@@ -6,7 +6,6 @@ if(sprite_index = spr_mario_grow)
 }
 if(sprite_index = spr_mario_shrink)
 {
-	powerup = 0
 	big = false
 	frozen = false
 	sprite_index = spr_mario_idle

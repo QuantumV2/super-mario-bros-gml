@@ -63,6 +63,8 @@ if instance_exists(obj_camera) && obj_camera.timer <= 100 && !hurryup {
 if y > room_height && !is_dead && pipe == noone
 	is_dead = true
 if is_dead {
+	powerup = 0
+	big = 0
 	obj_camera.timerfrozen = true
 	sprite_index = spr_dead
 	mask_index = spr_null
@@ -263,12 +265,15 @@ move = -(keyboard_check(vk_left) - keyboard_check(vk_right));
 } else {
 	move = 0
 }
-if(powerup == 1 && keyboard_check_pressed(ord("Z")) && big && instance_number(obj_fireballthrown) < 2 && !movefrozen && !frozen)
+if(powerup == 1 && keyboard_check_pressed(ord("Z")) && instance_number(obj_fireballthrown) < 2 && !movefrozen && !frozen)
 {
-instance_create_layer(x, y, "Instances", obj_fireballthrown)
-throwfire = true
-audio_play_sound(fireball, 10, 0)
-alarm[2] = 10
+	with(instance_create_layer(x, y, "Instances", obj_fireballthrown))
+	{
+		image_xscale = other.image_xscale	
+	}
+	throwfire = true
+	audio_play_sound(fireball, 10, 0)
+	alarm[2] = 10
 }
 // Set horizontal speed
 //hsp = move * (keyboard_check(ord("Z")) ? run_speed : walk_speed);
@@ -361,14 +366,6 @@ if(vsp > .2 && !is_dead)
 if (is_jumping && vsp < (grav * 6) && !ignorecollision) vsp += grav;
 
 
-if(move_speed == run_speed && abs(hsp) >= walk_speed)
-{
-	accel = .02;
-}
-else
-{
-	accel = .04;
-}
 
 if(!is_dead)
 {
@@ -405,7 +402,6 @@ if (vsp > 0 && place_meeting(x, y + vsp, obj_solid)) {
 jump_initiated = false;
 }
 
-print(y)
 
 var whole = floor(abs(hsp)); // the integer part of hsp
 var fraction = abs(hsp) - whole; // the fractional part of hsp

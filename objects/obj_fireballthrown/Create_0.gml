@@ -1,3 +1,3 @@
-hsp = 2.2;
-grav = 0.2;
-vsp = 3;
+hsp = 3.5;
+grav = 0.4;
+vsp = .2;
