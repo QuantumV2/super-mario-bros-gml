@@ -7,8 +7,9 @@ This project does not use any code that belongs to Nintendo, all image assets ar
 
 This project features a check for the original Super Mario Bros. ROM to run, We are not responsible for any fork of this project editing it.
 
+Please give credit if this project's code is used, we spent a lot of time making it.
 
-Please give credit if this project's code sised, we spent a lot of time making it
+This project is non-profit, it should NEVER be sold as it uses Nintendo's assets.
 
 
 
