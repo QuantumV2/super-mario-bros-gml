@@ -405,22 +405,29 @@ if (vsp > 0 && place_meeting(x, y + vsp, obj_solid)) {
 jump_initiated = false;
 }
 
-
+print(y)
 
 var whole = floor(abs(hsp)); // the integer part of hsp
 var fraction = abs(hsp) - whole; // the fractional part of hsp
 var dir = sign(hsp); // the direction hsp is pointing
 
-if(!ignorecollision)
+//in the original game, if your vertical position is higher than the rest of the level it just ignores horizontal collision, why? i wish i knew.
+if(!ignorecollision && y > 32)
 {
-for (var i = 0; i < whole; i++) {
-    if (!place_meeting(x + dir, y, obj_solid)) {
-        x += dir;
-    } else {
-        hsp = 0; // stop horizontal movement when colliding
-        break;
-    }
+	for (var i = 0; i < whole; i++) {
+		if (!place_meeting(x + dir, y, obj_solid)) {
+		    x += dir;
+		} else {
+		    hsp = 0; // stop horizontal movement when colliding
+		    break;
+		}
+	}
 }
+else if(y < 32)
+{
+	for (var i = 0; i < whole; i++) {
+	x += dir	
+	}
 }
 
 // check for any remaining fractional movement if we haven't already hit a solid
