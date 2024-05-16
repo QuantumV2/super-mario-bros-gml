@@ -1,2 +1,2 @@
 object = obj_oneup
-visible = false
+lock = false

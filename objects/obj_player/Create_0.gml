@@ -38,6 +38,7 @@ spr_crouch = spr_bigmario_crouch
 // Initialize physics
 hsp = 0;
 vsp = 0;
+prevvsp = 0;
 
 frict = .06;
 accel = .012;

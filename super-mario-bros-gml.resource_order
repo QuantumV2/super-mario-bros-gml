@@ -42,6 +42,7 @@
     {"name":"obj_fireflower","order":2,"path":"objects/obj_fireflower/obj_fireflower.yy",},
     {"name":"obj_flag","order":10,"path":"objects/obj_flag/obj_flag.yy",},
     {"name":"obj_flagpole","order":10,"path":"objects/obj_flagpole/obj_flagpole.yy",},
+    {"name":"obj_hiddenblock","order":13,"path":"objects/obj_hiddenblock/obj_hiddenblock.yy",},
     {"name":"obj_koopa","order":1,"path":"objects/obj_koopa/obj_koopa.yy",},
     {"name":"obj_movingplatform","order":3,"path":"objects/obj_movingplatform/obj_movingplatform.yy",},
     {"name":"obj_movingplatformhor","order":4,"path":"objects/obj_movingplatformhor/obj_movingplatformhor.yy",},

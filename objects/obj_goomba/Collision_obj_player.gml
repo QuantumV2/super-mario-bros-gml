@@ -1,4 +1,4 @@
-if(other.y < y && !dead && other.is_jumping && !other.is_dead )
+if(other.y < y && !dead && other.is_jumping && !other.is_dead && other.prevvsp > 0)
 {
 	audio_play_sound(stomp, 10, false)
 	sprite_index = spr_goombadead

@@ -117,7 +117,7 @@ else
 	}
 }
 
-if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead)
+if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead && prevvsp < 0)
 {
 	var qb = instance_place(x, y - 1, obj_questionmarkblock)
 	with(qb)
@@ -150,7 +150,7 @@ if(place_meeting(x, y - 1, obj_questionmarkblock) && !global.paused && !is_dead)
 }
 
 
-if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_meeting(x, y - 1, obj_questionmarkblock))
+if(place_meeting(x, y - 1, obj_brick) && !global.paused && !is_dead && !place_meeting(x, y - 1, obj_questionmarkblock) && prevvsp < 0)
 {
 	var brick = instance_place(x,  y - 1, obj_brick)
 	if(!brick.jumping && brick.sprite_index != spr_usedblock)
@@ -430,6 +430,8 @@ else if(y < 32)
 if (hsp != 0 && fraction > 0 && !place_meeting(x + dir, y, obj_solid)) {
     x += dir * fraction;
 }
+
+prevvsp = vsp
 
 if(!ignorecollision)
 {

@@ -81,6 +81,7 @@
     {"id":{"name":"obj_flag","path":"objects/obj_flag/obj_flag.yy",},},
     {"id":{"name":"obj_flagpole","path":"objects/obj_flagpole/obj_flagpole.yy",},},
     {"id":{"name":"obj_goomba","path":"objects/obj_goomba/obj_goomba.yy",},},
+    {"id":{"name":"obj_hiddenblock","path":"objects/obj_hiddenblock/obj_hiddenblock.yy",},},
     {"id":{"name":"obj_koopa","path":"objects/obj_koopa/obj_koopa.yy",},},
     {"id":{"name":"obj_movingplatform","path":"objects/obj_movingplatform/obj_movingplatform.yy",},},
     {"id":{"name":"obj_movingplatformhor","path":"objects/obj_movingplatformhor/obj_movingplatformhor.yy",},},
