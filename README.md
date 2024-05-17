@@ -1,4 +1,4 @@
-# super-mario-bros-gml ![image (7)](https://github.com/QuantumV2/super-mario-bros-gml/assets/83087109/4b83dad1-c860-4882-9fcb-b8a670e031a5)
+# ![image (7)](https://github.com/QuantumV2/super-mario-bros-gml/assets/83087109/4b83dad1-c860-4882-9fcb-b8a670e031a5)
 
 ## A Recreation of Super Mario Bros. in Gamemaker Studio 2.
 
