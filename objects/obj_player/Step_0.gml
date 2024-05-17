@@ -279,7 +279,7 @@ if(powerup == 1 && keyboard_check_pressed(ord("Z")) && instance_number(obj_fireb
 //hsp = move * (keyboard_check(ord("Z")) ? run_speed : walk_speed);
 
 // Flip sprite based on movement direction
-if (move != 0) image_xscale =  move;
+if (move != 0 && !is_jumping) image_xscale =  move;
 
 move_speed = (keyboard_check(ord("Z")) ? run_speed : walk_speed)
 
@@ -313,10 +313,8 @@ if(movefrozen) {}
 else
 {
 // Update horizontal movement
-if (!is_crouching && move != 0) {
+if ( move != 0) {
     hsp = lerp(hsp, move * move_speed, accel);
-} else if (is_crouching) {
-    hsp = lerp(hsp, 0, frict);
 } else {
     // Apply friction when not moving
     if (hsp > 0 && move == 0) {
@@ -326,6 +324,9 @@ if (!is_crouching && move != 0) {
     if (hsp < 0 && move == 0) {
         hsp = min(0, hsp + frict); // Friction going left
     }
+}
+if (is_crouching && !is_jumping) {
+    hsp = lerp(hsp, 0, frict);
 }
 }
 
@@ -433,7 +434,7 @@ if (hsp != 0 && fraction > 0 && !place_meeting(x + dir, y, obj_solid)) {
 
 prevvsp = vsp
 
-if(!ignorecollision)
+if(!ignorecollision && y > 32)
 {
 // Vertical Collision
 if (place_meeting(x, y + vsp, obj_solid)) {

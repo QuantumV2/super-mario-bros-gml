@@ -7,7 +7,7 @@ walk_speed = 1.4;
 run_speed = 3.1;
 move_speed = 0;
 grav = 0.18;
-jump_speed = -5;
+jump_speed = -5.2;
 jumpbuf = 0;
 
 move = 0;
