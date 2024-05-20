@@ -15,6 +15,7 @@ if !global.forcepaused
 		audio_play_sound(pause_sound, 10, false)
 	}
 }
+
 if(global.paused)
 {
 	image_speed = 0	
@@ -93,15 +94,21 @@ if is_dead {
 if(movefrozen) {}
 else
 {
+	var dirbutton = 0
+	if(hsp != 0)
+	{
+		var dirbutton = keyboard_check(horbuttonind[sign(hsp) + 1])
+	}
 	if(keyboard_check(vk_down) && place_meeting(x, y + 1, obj_pipe) && pipe == noone && !is_jumping && !movefrozen)
 	{
 		if(!instance_place(x, y + 1, obj_pipe).vertical && hsp == 0)
 		{
 		audio_play_sound(pipe_sound, 10, false)
+		ignorecollision = true
 		pipe = instance_place(x, y + 1, obj_pipe)
 		}
 	}
-	if(place_meeting(x + sign(hsp), y, obj_pipe) && keyboard_check(horbuttonind[sign(hsp) + 1]) && pipe == noone && !movefrozen)
+	if(place_meeting(x + sign(hsp), y, obj_pipe) && dirbutton  && pipe == noone && !movefrozen)
 	{
 
 		if(instance_place(x + sign(hsp), y, obj_pipe).vertical)
@@ -111,7 +118,8 @@ else
 				y++
 			}
 		audio_play_sound(pipe_sound, 10, false)
-		image_xscale = sign(hsp)
+		image_xscale = abs(sign(hsp)) > 0 ? sign(hsp) : image_xscale 
+		ignorecollision = true
 		pipe = instance_place(x + sign(hsp), y, obj_pipe)
 		}
 	}
@@ -204,7 +212,7 @@ if(airstreak > 0 && !is_jumping)
 	airstreak = 0;	
 }
 
-if(pipe != noone && !is_jumping)
+if(pipe != noone)
 {
 	mask_index = spr_null
 	movefrozen = true
@@ -265,7 +273,7 @@ move = -(keyboard_check(vk_left) - keyboard_check(vk_right));
 } else {
 	move = 0
 }
-if(powerup == 1 && keyboard_check_pressed(ord("Z")) && instance_number(obj_fireballthrown) < 2 && !movefrozen && !frozen)
+if(powerup == 1 && keyboard_check_pressed(ord("Z")) && instance_number(obj_fireballthrown) < 2 && !is_crouching && !movefrozen && !frozen)
 {
 	with(instance_create_layer(x, y, "Instances", obj_fireballthrown))
 	{
@@ -312,6 +320,10 @@ if(is_crouching) {
 if(movefrozen) {}
 else
 {
+if (is_crouching && !is_jumping) {
+	move = 0
+    hsp = lerp(hsp, 0, frict);
+}
 // Update horizontal movement
 if ( move != 0) {
     hsp = lerp(hsp, move * move_speed, accel);
@@ -325,9 +337,7 @@ if ( move != 0) {
         hsp = min(0, hsp + frict); // Friction going left
     }
 }
-if (is_crouching && !is_jumping) {
-    hsp = lerp(hsp, 0, frict);
-}
+
 }
 
 if(sprite_index == spr_jump && !is_jumping) { sprite_index = spr_walk; }
@@ -399,7 +409,7 @@ else
 }
 }
 
-if (vsp > 0 && place_meeting(x, y + vsp, obj_solid)) {
+if (vsp > 0 && (place_meeting(x, y + vsp, obj_solid))) {
 jump_initiated = false;
 }
 
@@ -408,33 +418,37 @@ var whole = floor(abs(hsp)); // the integer part of hsp
 var fraction = abs(hsp) - whole; // the fractional part of hsp
 var dir = sign(hsp); // the direction hsp is pointing
 
-//in the original game, if your vertical position is higher than the rest of the level it just ignores horizontal collision, why? i wish i knew.
-if(!ignorecollision && y > 32)
+if(!ignorecollision)
 {
-	for (var i = 0; i < whole; i++) {
-		if (!place_meeting(x + dir, y, obj_solid)) {
-		    x += dir;
-		} else {
-		    hsp = 0; // stop horizontal movement when colliding
-		    break;
-		}
+	if(x + dir < obj_camera.camX + 8)
+	{
+		hsp = 0
 	}
-}
-else if(y < 32)
-{
-	for (var i = 0; i < whole; i++) {
-	x += dir	
+	else
+	{
+		for (var i = 0; i < whole; i++) {
+			if (!place_meeting(x + dir, y, obj_solid)) {
+			    x += dir;
+			} else {
+			    hsp = 0; // stop horizontal movement when colliding
+			    break;
+			}
+		}
 	}
 }
 
 // check for any remaining fractional movement if we haven't already hit a solid
 if (hsp != 0 && fraction > 0 && !place_meeting(x + dir, y, obj_solid)) {
-    x += dir * fraction;
+    if(x + dir < obj_camera.camX + 8) {
+		hsp = 0
+    } else {
+        x += dir * fraction;
+    }
 }
 
 prevvsp = vsp
 
-if(!ignorecollision && y > 32)
+if(!ignorecollision)
 {
 // Vertical Collision
 if (place_meeting(x, y + vsp, obj_solid)) {

@@ -8,13 +8,21 @@ hsp = spd * movdir
 if (is_jumping) vsp += grav
 
 
-if ((!place_meeting(x + sign(hsp), y, obj_solid) || place_meeting(x + sign(hsp), y, obj_solidfollowcam)) && !place_meeting(x + sign(hsp), y, obj_enemyparent)) {
+if (!place_meeting(x + sign(hsp), y, obj_solid)) {
     x += hsp
 } else {
     movdir = -movdir
 }
 
-if (place_meeting(x, y + vsp, obj_solid) && !place_meeting(x + sign(hsp), y, obj_solidfollowcam)) {
+if(place_meeting(x + sign(hsp), y, obj_enemyparent))
+{
+	if(!instance_place(x + sign(hsp), y, obj_enemyparent).dead)
+	{
+		movdir = -movdir
+	}
+}
+
+if (place_meeting(x, y + vsp, obj_solid)) {
     while (!place_meeting(x, y + sign(vsp), obj_solid)) {
         y += sign(vsp);
     }
@@ -23,7 +31,7 @@ if (place_meeting(x, y + vsp, obj_solid) && !place_meeting(x + sign(hsp), y, obj
     is_jumping = false;
 }
 
-if (!place_meeting(x, y + 16, obj_solid) && !place_meeting(x, y + 16, obj_solidfollowcam)) {
+if (!place_meeting(x, y + 16, obj_solid)) {
     is_jumping = true;
 }
 

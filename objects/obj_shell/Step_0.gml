@@ -12,7 +12,7 @@ if (is_jumping) vsp += grav
 
 if(moving)
 {
-if (!place_meeting(x + sign(hsp), y, obj_solid) || place_meeting(x + sign(hsp), y, obj_solidfollowcam)) {
+if (!place_meeting(x + sign(hsp), y, obj_solid)) {
     x += hsp
 } else {
 	movdir = -movdir
@@ -20,7 +20,7 @@ if (!place_meeting(x + sign(hsp), y, obj_solid) || place_meeting(x + sign(hsp), 
 }
 }
 
-if (place_meeting(x, y + vsp, obj_solid) && !place_meeting(x, y + sign(vsp), obj_solidfollowcam)) {
+if (place_meeting(x, y + vsp, obj_solid)) {
     while (!place_meeting(x, y + sign(vsp), obj_solid)) {
         y += sign(vsp);
     }
@@ -29,7 +29,7 @@ if (place_meeting(x, y + vsp, obj_solid) && !place_meeting(x, y + sign(vsp), obj
     is_jumping = false;
 }
 
-if (!place_meeting(x, y + 16, obj_solid) && !place_meeting(x, y + 16, obj_solidfollowcam)) {
+if (!place_meeting(x, y + 16, obj_solid) ) {
     is_jumping = true;
 }
 

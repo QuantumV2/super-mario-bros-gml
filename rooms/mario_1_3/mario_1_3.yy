@@ -55,7 +55,6 @@
     {"name":"inst_38285076","path":"rooms/mario_1_3/mario_1_3.yy",},
     {"name":"inst_3F6807D2","path":"rooms/mario_1_3/mario_1_3.yy",},
     {"name":"inst_D80999D","path":"rooms/mario_1_3/mario_1_3.yy",},
-    {"name":"inst_200A03CB","path":"rooms/mario_1_3/mario_1_3.yy",},
     {"name":"inst_410433C2","path":"rooms/mario_1_3/mario_1_3.yy",},
     {"name":"inst_36536CAD","path":"rooms/mario_1_3/mario_1_3.yy",},
     {"name":"inst_6890BB4E","path":"rooms/mario_1_3/mario_1_3.yy",},
@@ -78,7 +77,6 @@
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":0,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_D80999D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_D80999D","objectId":{"name":"obj_solid","path":"objects/obj_solid/obj_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":15.0,"x":-16.0,"y":0.0,},
-        {"$GMRInstance":"","%Name":"inst_200A03CB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_200A03CB","objectId":{"name":"obj_solidfollowcam","path":"objects/obj_solidfollowcam/obj_solidfollowcam.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":15.0,"x":-32.0,"y":0.0,},
         {"$GMRInstance":"","%Name":"inst_410433C2","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_410433C2","objectId":{"name":"obj_koopa","path":"objects/obj_koopa/obj_koopa.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":490.0,"y":72.0,},
         {"$GMRInstance":"","%Name":"inst_36536CAD","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_36536CAD","objectId":{"name":"obj_koopa","path":"objects/obj_koopa/obj_koopa.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1168.0,"y":96.0,},
         {"$GMRInstance":"","%Name":"inst_6890BB4E","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6890BB4E","objectId":{"name":"obj_koopa","path":"objects/obj_koopa/obj_koopa.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1770.0,"y":104.0,},

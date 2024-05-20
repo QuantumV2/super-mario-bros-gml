@@ -1,3 +1,4 @@
+
 if(keyboard_check_pressed(vk_enter)){
 	if(choice == 1) global.twoplayer = true;
 	room_goto(transition)	
