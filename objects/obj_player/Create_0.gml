@@ -3,11 +3,20 @@ depth = -9999
 if(instance_number(object_index) > 1) instance_destroy(); 
 // Speeds
 hurryup = 0
-walk_speed = 1.4;
-run_speed = 3.1;
+walk_speed = (1 + 9.0/16);
+run_speed = (2 + 9.0/16)	;
 move_speed = 0;
-grav = 0.18;
-jump_speed = -5.2;
+//gravities
+small_grav = (2.0/16);
+medium_grav = (1.0/16 + 14.0/256);
+big_grav = (2.0/16 + 8.0/256);
+
+small_fall_grav = (7.0/16);
+medium_fall_grav = (6.0/16);
+big_fall_grav = (9.0/16);
+
+jump_speed = -4.2;
+big_jump_speed = -5.0
 jumpbuf = 0;
 
 move = 0;
@@ -40,8 +49,14 @@ hsp = 0;
 vsp = 0;
 prevvsp = 0;
 
-frict = .06;
-accel = .012;
+frict = (13.0/256);
+//print(frict)
+skid_frict = (1.0/16 + 10.0/256);
+accel_normal = (9.0/256 + 8.0/(16*16*16));
+accel_jump_small = (9 / 256 + 8 / (16*16*16))
+accel_jump_big = (14 / 256 + 4 / (16*16*16))
+
+runaccel = (14.0/256 + 4.0/(16*16*16));
 
 frozen = false;
 movefrozen = false;

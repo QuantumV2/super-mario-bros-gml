@@ -3,7 +3,7 @@ if(instance_exists(player))
 {
 	player.frozen = false
 	player.sprite_index = player.spr_walk
-	player.hsp = 1.8
+	player.hsp = (1 + 9.0/16)
 
 	with(player)
 	{

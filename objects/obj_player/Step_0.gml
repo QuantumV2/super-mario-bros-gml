@@ -1,4 +1,42 @@
 scr_playerpal()
+var accel = accel_normal
+var grav = 0
+if (keyboard_check(ord("X")))
+{
+	if(move == sign(image_xscale))
+	{
+		if(hsp < (1 + 9/16))
+		{
+			accel = accel_jump_small
+		}
+		else
+		{
+			accel = accel_jump_big
+		}
+	}
+	if(move != sign(image_xscale))
+	{
+		if(hsp >= (1 + 9/16))
+		{
+			hsp -= accel_jump_big
+		}
+		else
+		{
+			hsp -= accel_jump_small
+		}
+	}
+}
+if(hsp < 1)
+{
+	grav = keyboard_check(ord("X")) && vsp <= 0 ? small_grav : small_fall_grav
+}
+else if (hsp >= 1){
+	grav = keyboard_check(ord("X")) && vsp <= 0 ? medium_grav : medium_fall_grav
+}
+else if(hsp >= (2 + 5/16))
+{
+	grav = keyboard_check(ord("X")) && vsp <= 0 ? big_grav : big_fall_grav
+}
 global.powerup[global.luigi] = [big, powerup]
 if !global.forcepaused
 {
@@ -97,7 +135,7 @@ else
 	var dirbutton = 0
 	if(hsp != 0)
 	{
-		var dirbutton = keyboard_check(horbuttonind[sign(hsp) + 1])
+		dirbutton = keyboard_check(horbuttonind[sign(hsp) + 1])
 	}
 	if(keyboard_check(vk_down) && place_meeting(x, y + 1, obj_pipe) && pipe == noone && !is_jumping && !movefrozen)
 	{
@@ -328,6 +366,10 @@ if (is_crouching && !is_jumping) {
 if ( move != 0) {
     hsp = lerp(hsp, move * move_speed, accel);
 } else {
+	var fricttouse = frict
+	if (sign(hsp) != sign(move)) {
+		fricttouse = skid_frict
+    }
     // Apply friction when not moving
     if (hsp > 0 && move == 0) {
 
@@ -359,11 +401,11 @@ else
 	if (keyboard_check_pressed(ord("X")) && (!is_jumping) || (!is_jumping && jumpbuf > 0)) {
 	    is_jumping = true;
 	    jump_initiated = true;
-	    vsp = jump_speed - abs(hsp) / 7;
+	    vsp = hsp >= (2 + 5/16) ? big_jump_speed : jump_speed;
 	    //is_crouching = false; // Reset crouching when jumping
 	    var snd = big ? audio_play_sound(superjump_sound, 10, false) : audio_play_sound(jump_sound, 10, false)
 	} else if (keyboard_check_released(ord("X")) && is_jumping) {
-	    if (sign(vsp) == -1) vsp /= 2;
+	    if (sign(vsp) == -1) vsp = 0;
 	}
 }
 
@@ -374,7 +416,8 @@ if(vsp > .2 && !is_dead)
 
 // Update vspeed with gravity
 
-if (is_jumping && vsp < (grav * 6) && !ignorecollision) vsp += grav;
+if (is_jumping && vsp < 4.0 && !ignorecollision) vsp += grav;
+vsp = clamp(vsp, -4.0, 4.0)
 
 
 
