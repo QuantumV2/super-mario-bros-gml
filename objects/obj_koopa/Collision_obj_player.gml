@@ -1,7 +1,10 @@
 if(other.y < y - 2 && !dead && other.is_jumping && !other.is_dead && other.prevvsp > 0)
 {
 	audio_play_sound(stomp, 10, false)
-	instance_create_layer(x, y, "Instances", obj_shell)
+	with(instance_create_layer(x, y, "Instances", obj_shell))
+	{
+		red = other.red	
+	}
 	instance_destroy(id, false)
 }
 else

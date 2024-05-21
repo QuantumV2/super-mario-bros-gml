@@ -392,7 +392,6 @@ if (keyboard_check_pressed(ord("X")) && (is_jumping) && jumpbuf <= 0 )
 		jumpbuf = 5
 	}
 }
-
 jumpbuf = (jumpbuf - 1 < 0) ? 0 : jumpbuf - 1
 // Jumping logic
 if(movefrozen) {}
@@ -405,7 +404,7 @@ else
 	    //is_crouching = false; // Reset crouching when jumping
 	    var snd = big ? audio_play_sound(superjump_sound, 10, false) : audio_play_sound(jump_sound, 10, false)
 	} else if (keyboard_check_released(ord("X")) && is_jumping) {
-	    if (sign(vsp) == -1) vsp = 0;
+	    if (vsp >= -1) vsp = 0;
 	}
 }
 
