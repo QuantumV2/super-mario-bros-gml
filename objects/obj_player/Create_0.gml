@@ -7,6 +7,7 @@ walk_speed = (1 + 9.0/16);
 run_speed = (2 + 9.0/16)	;
 move_speed = 0;
 //gravities
+
 small_grav = (2.0/16);
 medium_grav = (1.0/16 + 14.0/256);
 big_grav = (2.0/16 + 8.0/256);
@@ -15,9 +16,10 @@ small_fall_grav = (7.0/16);
 medium_fall_grav = (6.0/16);
 big_fall_grav = (9.0/16);
 
+//grav = small_fall_grav
+
 jump_speed = -4.2;
 big_jump_speed = -5.0
-jumpbuf = 0;
 
 move = 0;
 

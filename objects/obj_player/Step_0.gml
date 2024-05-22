@@ -386,18 +386,11 @@ if(sprite_index == spr_jump && !is_jumping) { sprite_index = spr_walk; }
 
 
 
-if (keyboard_check_pressed(ord("X")) && (is_jumping) && jumpbuf <= 0 )
-{
-	if(place_meeting(x, y + 15, obj_solid)){
-		jumpbuf = 5
-	}
-}
-jumpbuf = (jumpbuf - 1 < 0) ? 0 : jumpbuf - 1
 // Jumping logic
 if(movefrozen) {}
 else
 {
-	if (keyboard_check_pressed(ord("X")) && (!is_jumping) || (!is_jumping && jumpbuf > 0)) {
+	if (keyboard_check_pressed(ord("X")) && (!is_jumping)) {
 	    is_jumping = true;
 	    jump_initiated = true;
 	    vsp = hsp >= (2 + 5/16) ? big_jump_speed : jump_speed;
@@ -519,7 +512,7 @@ if (place_meeting(x, y + vsp, obj_solid) && abs(vsp) > 0 && place_meeting(x + hs
 
 if !(place_meeting(x, y + 1, obj_solid)) 
 {
-    if(alarm[0] <= 0) alarm[0] = 4;
+    is_jumping = true;
 }
 
 
