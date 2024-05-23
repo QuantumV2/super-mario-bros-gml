@@ -1,7 +1,7 @@
 scr_playerpal()
 var accel = accel_normal
 var grav = 0
-if (keyboard_check(ord("X")))
+if (is_jumping)
 {
 	if(move == sign(image_xscale))
 	{
@@ -28,14 +28,14 @@ if (keyboard_check(ord("X")))
 }
 if(hsp < 1)
 {
-	grav = keyboard_check(ord("X")) && vsp <= 0 ? small_grav : small_fall_grav
+	grav = jump_button_held_from_jump  ? small_grav : small_fall_grav
 }
 else if (hsp >= 1){
-	grav = keyboard_check(ord("X")) && vsp <= 0 ? medium_grav : medium_fall_grav
+	grav = jump_button_held_from_jump ? medium_grav : medium_fall_grav
 }
 else if(hsp >= (2 + 5/16))
 {
-	grav = keyboard_check(ord("X")) && vsp <= 0 ? big_grav : big_fall_grav
+	grav = jump_button_held_from_jump ? big_grav : big_fall_grav
 }
 global.powerup[global.luigi] = [big, powerup]
 if !global.forcepaused
@@ -384,20 +384,20 @@ if ( move != 0) {
 
 if(sprite_index == spr_jump && !is_jumping) { sprite_index = spr_walk; }
 
-
-
 // Jumping logic
 if(movefrozen) {}
 else
 {
 	if (keyboard_check_pressed(ord("X")) && (!is_jumping)) {
 	    is_jumping = true;
+		jump_button_held_from_jump = true;
 	    jump_initiated = true;
 	    vsp = hsp >= (2 + 5/16) ? big_jump_speed : jump_speed;
 	    //is_crouching = false; // Reset crouching when jumping
 	    var snd = big ? audio_play_sound(superjump_sound, 10, false) : audio_play_sound(jump_sound, 10, false)
 	} else if (keyboard_check_released(ord("X")) && is_jumping) {
-	    if (vsp >= -1) vsp = 0;
+	    if (vsp <= -1) vsp = lerp(vsp, 0, grav);
+		jump_button_held_from_jump = false
 	}
 }
 

@@ -19,6 +19,7 @@ big_fall_grav = (9.0/16);
 //grav = small_fall_grav
 
 jump_speed = -4.2;
+jump_button_held_from_jump = false
 big_jump_speed = -5.0
 
 move = 0;

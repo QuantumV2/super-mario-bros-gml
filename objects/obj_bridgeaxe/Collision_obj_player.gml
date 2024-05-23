@@ -1,6 +1,7 @@
 if(player != noone) exit;
 other.movefrozen = true
 other.hsp = 0
+other.vsp = 0
 //other.is_jumping = false
 obj_camera.timerfrozen = true
 other.image_xscale = 1
