@@ -3,7 +3,7 @@ var accel = accel_normal
 var grav = 0
 if (is_jumping)
 {
-	if(move == sign(image_xscale))
+	if(sign(hsp) == sign(image_xscale))
 	{
 		if(hsp < (1 + 9/16))
 		{
@@ -14,7 +14,7 @@ if (is_jumping)
 			accel = accel_jump_big
 		}
 	}
-	if(move != sign(image_xscale))
+	if(sign(hsp) != sign(image_xscale))
 	{
 		if(hsp >= (1 + 9/16))
 		{
@@ -463,8 +463,11 @@ if(!ignorecollision)
 	{
 		for (var i = 0; i < whole; i++) {
 			if (!place_meeting(x + dir, y, obj_solid)) {
+
 			    x += dir;
 			} else {
+				if abs(vsp) > 0 
+					vsp -= 0.5;
 			    hsp = 0; // stop horizontal movement when colliding
 			    break;
 			}
@@ -482,11 +485,13 @@ if (hsp != 0 && fraction > 0 && !place_meeting(x + dir, y, obj_solid)) {
 }
 
 prevvsp = vsp
+var snap_threshold = 4; // distance within which to snap
 
 if(!ignorecollision)
 {
 // Vertical Collision
 if (place_meeting(x, y + vsp, obj_solid)) {
+
 	if(!place_meeting(x, y + vsp, obj_movingplatform))
 	{
 		while (!place_meeting(x, y + sign(vsp), obj_solid)) {
@@ -505,10 +510,7 @@ if (place_meeting(x, y + vsp, obj_solid)) {
 }
 }
 
-if (place_meeting(x, y + vsp, obj_solid) && abs(vsp) > 0 && place_meeting(x + hsp, y, obj_solid) && !ignorecollision) {
-	y -= vsp
-	x += hsp
-}
+
 
 if !(place_meeting(x, y + 1, obj_solid)) 
 {
