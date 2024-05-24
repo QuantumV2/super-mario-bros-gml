@@ -207,7 +207,7 @@
     {"id":{"name":"spr_mario_shrink","path":"sprites/spr_mario_shrink/spr_mario_shrink.yy",},},
     {"id":{"name":"spr_mario_swim1","path":"sprites/spr_mario_swim1/spr_mario_swim1.yy",},},
     {"id":{"name":"spr_mario_swim2","path":"sprites/spr_mario_swim2/spr_mario_swim2.yy",},},
-    {"id":{"name":"spr_mario_Swim3","path":"sprites/spr_mario_Swim3/spr_mario_Swim3.yy",},},
+    {"id":{"name":"spr_mario_swim3","path":"sprites/spr_mario_swim3/spr_mario_swim3.yy",},},
     {"id":{"name":"spr_mario_turn","path":"sprites/spr_mario_turn/spr_mario_turn.yy",},},
     {"id":{"name":"spr_mariopal","path":"sprites/spr_mariopal/spr_mariopal.yy",},},
     {"id":{"name":"spr_mushroom","path":"sprites/spr_mushroom/spr_mushroom.yy",},},

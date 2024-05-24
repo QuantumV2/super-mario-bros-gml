@@ -3,8 +3,10 @@ try{
 	if((global.lives == [0,0] && global.twoplayer) || (global.lives[0] == 0 && !global.twoplayer))
 	{
 		global.scores[global.luigi] = 0
-		script_execute(init)
-		game_restart()	
+		init()
+		instance_destroy(obj_player)
+		room_goto(titlescreen)
+		
 	}
 	else
 	{

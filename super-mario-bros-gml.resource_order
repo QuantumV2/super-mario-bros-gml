@@ -112,7 +112,7 @@
     {"name":"spr_mario_shrink","order":16,"path":"sprites/spr_mario_shrink/spr_mario_shrink.yy",},
     {"name":"spr_mario_swim1","order":17,"path":"sprites/spr_mario_swim1/spr_mario_swim1.yy",},
     {"name":"spr_mario_swim2","order":18,"path":"sprites/spr_mario_swim2/spr_mario_swim2.yy",},
-    {"name":"spr_mario_Swim3","order":19,"path":"sprites/spr_mario_Swim3/spr_mario_Swim3.yy",},
+    {"name":"spr_mario_swim3","order":19,"path":"sprites/spr_mario_swim3/spr_mario_swim3.yy",},
     {"name":"spr_mario_turn","order":20,"path":"sprites/spr_mario_turn/spr_mario_turn.yy",},
     {"name":"spr_mariopal","order":3,"path":"sprites/spr_mariopal/spr_mariopal.yy",},
     {"name":"spr_mushroomoneup","order":1,"path":"sprites/spr_mushroomoneup/spr_mushroomoneup.yy",},

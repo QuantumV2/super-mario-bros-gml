@@ -1,4 +1,5 @@
 randomize();
+window_set_size(256*4, 240*4)
 camW = camera_get_view_width(view_camera[0]);  //we'll need the camera width
 camH = camera_get_view_height(view_camera[0]);
 camX = 0;

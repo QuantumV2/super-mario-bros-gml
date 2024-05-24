@@ -1,3 +1,4 @@
+
 audio_stop_all()
 level = asset_get_index("mario_" + string(global.world) + "_" + string(global.level))
 if(global.luigi)

@@ -1,3 +1,5 @@
+function init()
+{
 global.paused = false
 global.forcepaused = false
 global.music = -1
@@ -15,3 +17,4 @@ global.undergroundlevels = [transition, mario_1_1_subarea, mario_1_2, mario_1_2_
 global.powerup = [[0,0],[0,0]]
 global.twoplayer = false
 global.scores = [0, 0]
+}

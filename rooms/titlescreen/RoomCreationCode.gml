@@ -1,4 +1,5 @@
-window_set_size(256*4, 240*4)
+init()
+
 //window_set_fullscreen(true)
 if (os_type == os_unknown)
 {
