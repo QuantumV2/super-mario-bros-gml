@@ -466,7 +466,7 @@ if(!ignorecollision)
 
 			    x += dir;
 			} else {
-				if abs(vsp) > 0 
+				if abs(vsp) > 0 && vsp > big_jump_speed
 					vsp -= 0.5;
 			    hsp = 0; // stop horizontal movement when colliding
 			    break;

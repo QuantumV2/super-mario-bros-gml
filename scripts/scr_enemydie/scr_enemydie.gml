@@ -3,6 +3,10 @@
 function scr_enemydie(){
 with(instance_create_layer(x, y, "Instances", obj_debris))
 {
+	if(variable_instance_exists(other, "palarray"))
+	{
+			palarray = other.palarray
+	}
 	image_speed = 0
 	if(other.object_index != obj_koopa)
 		sprite_index = other.sprite_index
