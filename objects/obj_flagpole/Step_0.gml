@@ -42,7 +42,7 @@ if(instance_exists(player))
 	if(playershouldwalk){
 		player.frozen = false
 		player.sprite_index = player.spr_walk
-		player.hsp = 1.8
+		player.hsp = player.walk_speed
 		with(player)
 		{
 			if(place_meeting(x+1, y - 8, obj_solid)){
