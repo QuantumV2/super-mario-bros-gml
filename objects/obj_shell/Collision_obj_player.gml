@@ -1,4 +1,4 @@
-if(!moving || (moving && other.is_jumping && !other.is_dead && !other.frozen && !other.movefrozen))
+if(!moving || (moving && other.vsp > 0))
 {
     moving = !moving
     //x += image_xscale * 2
@@ -13,4 +13,9 @@ if(!moving || (moving && other.is_jumping && !other.is_dead && !other.frozen && 
         global.scores[global.luigi] += 400
         audio_play_sound(kick, 10, false)
     }
+}
+
+if(moving && other.vsp <= 0)
+{
+	scr_player_get_hurt()
 }

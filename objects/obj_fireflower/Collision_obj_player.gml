@@ -1,3 +1,5 @@
+if(other.powerup > 0) exit;
+
 other.frozen = true
 other.image_speed = 1
 other.y -= 8

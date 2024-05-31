@@ -1,5 +1,6 @@
 if(player != noone) exit;
 other.movefrozen = true
+other.is_crouching = false
 other.hsp = 0
 other.frozen = true
 other.x = x + 4

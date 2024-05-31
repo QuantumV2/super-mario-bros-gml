@@ -1,4 +1,4 @@
 target_room = mario_1_1
 target_door = "D"
 vertical = true
-camoffset = 104
+camoffset = 104-(16*3)

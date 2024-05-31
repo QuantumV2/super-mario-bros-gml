@@ -330,14 +330,18 @@ if (move != 0 && !is_jumping) image_xscale =  move;
 move_speed = (keyboard_check(ord("Z")) ? run_speed : walk_speed)
 
 
-if(keyboard_check(vk_down) && big && !movefrozen && !frozen && !is_jumping){
-	is_crouching = true	
+if(keyboard_check(vk_down) && big && !movefrozen && !frozen && !is_jumping) {
+is_crouching = true;
+} else if(is_crouching && !keyboard_check(vk_down) && !is_jumping) {
+if(!place_meeting(x, y-10, obj_solid)) {
+is_crouching = false;
 }
-if(!keyboard_check(vk_down) && !is_jumping)
-{
-	is_crouching = false	
 }
 
+if(!big && is_crouching)
+{
+	is_crouching =false
+}
 // Change sprites based on actions
 if (is_dead) {
     sprite_index = spr_dead;
