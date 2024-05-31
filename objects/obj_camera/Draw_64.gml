@@ -8,6 +8,6 @@ if(room == transition)
 	else if(obj_transitionscreen.sprite_index != spr_gameover)
 	{
 		draw_text(135, 80, string(global.world) + "-" + string(global.level))
-		draw_text(144, 112, string(global.lives[global.luigi]))
+		draw_text(global.lives[global.luigi] < 10 ? 144 : 144-8, 112, global.lives[global.luigi] < 10 ? string(global.lives[global.luigi]) : "♕" + string_char_at( string(global.lives[global.luigi]), string_length(string(global.lives[global.luigi])) - 1 ))
 	}
 }

@@ -456,7 +456,6 @@ jump_initiated = false;
 var whole = floor(abs(hsp)); // the integer part of hsp
 var fraction = abs(hsp) - whole; // the fractional part of hsp
 var dir = sign(hsp); // the direction hsp is pointing
-
 if(!ignorecollision)
 {
 	if(x + dir < obj_camera.camX + 8)
@@ -477,6 +476,10 @@ if(!ignorecollision)
 			}
 		}
 	}
+}
+else
+{
+	x += dir
 }
 
 // check for any remaining fractional movement if we haven't already hit a solid
