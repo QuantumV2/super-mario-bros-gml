@@ -15,7 +15,7 @@ if(!moving || (moving && other.vsp > 0))
     }
 }
 
-if(moving && other.vsp <= 0)
+if(moving && other.vsp == 0)
 {
 	scr_player_get_hurt()
 }

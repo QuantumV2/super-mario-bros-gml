@@ -1,3 +1,4 @@
+if global.paused exit;
 if(dir == 1)
 {
 x += 1

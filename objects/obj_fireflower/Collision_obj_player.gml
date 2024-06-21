@@ -1,5 +1,15 @@
-if(other.powerup > 0) exit;
+if(other.powerup > 0){
+	
+	global.scores[global.luigi] += 1000
+with(instance_create_layer(x, y - 8, "Instances", obj_scoreparticle))
+{
+	scorenumber = 1000
+}
+instance_destroy()
 
+}
+else
+{
 other.frozen = true
 other.image_speed = 1
 other.y -= 8
@@ -12,3 +22,4 @@ with(instance_create_layer(x, y - 8, "Instances", obj_scoreparticle))
 	scorenumber = 1000
 }
 instance_destroy()
+}
