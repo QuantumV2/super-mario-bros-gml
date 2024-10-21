@@ -1,11 +1,11 @@
 scr_playerpal()
 var accel = accel_normal
 var grav = 0
-if (is_jumping)
+if (is_jumping && hsp != 0)
 {
 	if(sign(hsp) == sign(image_xscale))
 	{
-		if(hsp < (1 + 9/16))
+		if(abs(hsp) < (1 + 9/16))
 		{
 			accel = accel_jump_small
 		}
@@ -16,13 +16,13 @@ if (is_jumping)
 	}
 	if(sign(hsp) != sign(image_xscale))
 	{
-		if(hsp >= (1 + 9/16))
+		if(abs(hsp) >= (1 + 9/16))
 		{
-			hsp -= accel_jump_big
+			accel  = accel_jump_big
 		}
 		else
 		{
-			hsp -= accel_jump_small
+			accel = accel_jump_small
 		}
 	}
 }
@@ -267,7 +267,7 @@ if(pipe != noone)
 		{
 			vsp = 0
 			ignorecollision = false
-			depth = 0
+			depth = 300
 			movefrozen = false
 			room_goto(pipe.target_room)
 			pipe = noone
@@ -281,7 +281,7 @@ if(pipe != noone)
 		if(!audio_is_playing(pipe_sound))
 		{
 			ignorecollision = false
-			depth = 0
+			depth = 300
 			movefrozen = false
 			room_goto(pipe.target_room)
 			pipe = noone
@@ -492,7 +492,6 @@ if (hsp != 0 && fraction > 0 && !place_meeting(x + dir, y, obj_solid)) {
 }
 
 prevvsp = vsp
-var snap_threshold = 4; // distance within which to snap
 
 if(!ignorecollision)
 {
